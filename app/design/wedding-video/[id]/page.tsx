@@ -7,20 +7,17 @@ import { useState, use } from "react"
 const projects = [
   {
     id: 1,
-    title: "Romantic Wedding Film",
-    description: "감성적인 식전영상으로 신랑신부의 사랑 이야기를 담았습니다.",
-    category: "Wedding Film",
-    client: "김철수 & 이영희",
-    date: "2024.03",
+    title: "Romantic Wedding Moving Poster",
+    description:
+      "무빙포스터 일러스트 형식의 식전영상으로,\n사진과 그래픽을 활용해 신랑신부의 분위기를 감성적으로 표현했습니다.",
+    category: "Wedding Film · 식전영상 (3분)",
     role: "Director, Editor",
-    thumbnail: "/wedding-video-romantic.jpg",
-    videoUrl: "/videos/romantic-wedding.mp4",
-    challenge:
-      "두 분의 사랑 이야기를 감동적이면서도 자연스럽게 전달하는 것이 목표였습니다. 과도한 연출이 아닌 진정성 있는 순간들을 포착하는 것이 중요했습니다.",
+    thumbnail: "/videos/video_3.jpg",
+    videoUrl: "/videos/video_3.mp4",
     solution:
-      "실제 데이트 장소에서 자연스러운 모습을 촬영하고, 두 분의 인터뷰를 통해 진솔한 이야기를 담았습니다. 부드러운 색감과 감성적인 음악으로 로맨틱한 분위기를 연출했습니다.",
+      "무빙포스터 스타일의 일러스트 연출과 세로 이미지를 가로 화면에 자연스럽게 배경 합성하여 구성했습니다.\n3분 내외의 한 곡 음악에 맞춰 장면 전환과 무빙을 설계하고,\n음악 길이에 따라 2–3분 내 유연하게 조절 가능하도록 제작했습니다.",
     result:
-      "결혼식 당일 하객들의 큰 감동을 이끌어냈으며, 신랑신부분께서도 매우 만족해하셨습니다. 자연스러운 연출과 진정성 있는 스토리텔링이 돋보였다는 평가를 받았습니다.",
+      "로맨틱하면서도 담백한 분위기의 식전영상으로 완성되었으며,\n결혼식 공간의 분위기를 자연스럽게 살리는 영상으로 활용되었습니다.",
   },
   {
     id: 2,
@@ -103,11 +100,9 @@ export default function WeddingVideoDetailPage({ params }: { params: Promise<{ i
             <div className="detail-header slide-in-up">
               <h1 className="detail-title">{project.title}</h1>
               <div className="detail-meta">
-                <span>Client: {project.client}</span>
-                <span>Date: {project.date}</span>
                 <span>Role: {project.role}</span>
               </div>
-              <p className="detail-description">{project.description}</p>
+              <p className="detail-description" style={{ whiteSpace: "pre-line" }}>{project.description}</p>
             </div>
 
             <div className="video-player slide-in-up">
@@ -130,18 +125,17 @@ export default function WeddingVideoDetailPage({ params }: { params: Promise<{ i
 
             <div className="detail-content">
               <div className="detail-section slide-in-up">
-                <h2>Challenge</h2>
-                <p>{project.challenge}</p>
-              </div>
-
-              <div className="detail-section slide-in-up">
                 <h2>Solution</h2>
-                <p>{project.solution}</p>
+                <p style={{ whiteSpace: "pre-line" }}>
+                  {project.solution}
+                </p>
               </div>
 
               <div className="detail-section slide-in-up">
                 <h2>Result</h2>
-                <p>{project.result}</p>
+                <p style={{ whiteSpace: "pre-line" }}>
+                  {project.result}
+                </p>
               </div>
             </div>
           </div>

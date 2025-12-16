@@ -4,17 +4,17 @@ import Link from "next/link"
 const weddingVideos = [
   {
     id: 1,
-    title: "Romantic Wedding Film",
-    description: "감성적인 식전영상 - 신랑신부의 사랑 이야기",
-    category: "Wedding Film",
-    image: "/wedding-video-romantic.jpg",
+    title: "Romantic Wedding Moving Poster",
+    description: "사진과 그래픽을 활용해 신랑신부의 분위기를 감성적으로 표현한 무빙포스터 식전영상",
+    category: "Wedding Film (3분)",
+    image: "/videos/video_3.jpg",
   },
   {
     id: 2,
     title: "Modern Wedding Video",
     description: "모던한 스타일의 식전영상 - 세련된 연출",
     category: "Wedding Film",
-    image: "/wedding-video-modern.jpg",
+    image: "/wedding-video-modern.jpg",ㅠ
   },
   {
     id: 3,
@@ -216,11 +216,13 @@ export default function DesignPage() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-social">
-              <a href="mailto:your.email@example.com" aria-label="Email">
-                ✉
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                GitHub
+              <a
+                href="https://blog.naver.com/ruruha_"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Naver Blog"
+              >
+                Naver Blog
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 LinkedIn

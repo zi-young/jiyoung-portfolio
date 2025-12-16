@@ -26,11 +26,11 @@ export default function HomePage() {
           <div className="container">
             <div className="hero-content">
               <h1>
-                Design, Develop,
+                Design, Develop
                 <br />
-                and Refine.
+                Create.
               </h1>
-              <p>감각적인 디자인부터 완성도 있는 구현까지 — 제 작업의 모든 과정입니다.</p>
+              <p>디자인부터 구현까지, 작업의 전 과정을 담았습니다.</p>
               <div className="hero-buttons">
                 <Link href="/design" className="button button-primary">
                   Design
