@@ -14,7 +14,7 @@ const weddingVideos = [
     title: "Modern Wedding Video",
     description: "모던한 스타일의 식전영상 - 세련된 연출",
     category: "Wedding Film",
-    image: "/wedding-video-modern.jpg",ㅠ
+    image: "/wedding-video-modern.jpg",
   },
   {
     id: 3,
