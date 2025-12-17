@@ -7,21 +7,21 @@ const weddingVideos = [
     title: "Romantic Wedding Moving Poster",
     description: "사진과 그래픽을 활용해 신랑신부의 분위기를 감성적으로 표현한 무빙포스터 식전영상",
     category: "Wedding Film (3분)",
-    image: "/videos/video_3.jpg",
+    image: "/videos/video_1.jpg",
   },
   {
     id: 2,
     title: "Modern Wedding Video",
-    description: "모던한 스타일의 식전영상 - 세련된 연출",
-    category: "Wedding Film",
-    image: "/wedding-video-modern.jpg",
+    description: "짧은 영상과 이미지의 조합으로 모던하면서 감각적인 분위기의 식전영상",
+    category: "Wedding Film (1분 30초 / 1절)",
+    image: "/videos/video_2.jpg",
   },
   {
     id: 3,
-    title: "Cinematic Wedding Story",
-    description: "시네마틱 식전영상 - 영화 같은 스토리텔링",
+    title: "Minimal Wedding Looping Video",
+    description: "잔잔한 스타일로 1분이내 영상을 반복재생하기 좋은 식전영상입니다.",
     category: "Wedding Film",
-    image: "/wedding-video-cinematic.jpg",
+    image: "/videos/video_3.jpg",
   },
 ]
 
@@ -68,10 +68,10 @@ const designProjects = [
   },
   {
     id: 3,
-    title: "Mobile App Interface",
-    description: "헬스케어 앱 UI 디자인 - 직관적인 사용자 경험",
-    category: "Mobile Design",
-    image: "/healthcare-mobile-app.png",
+    title: "Album, Poster & Fashion Detail Page Design",
+    description:"앨범 커버와 프로모션 포스터, 의류 쇼핑몰 상세페이지 디자인 작업입니다.",
+    category: "Graphic Design · Visual Branding",
+    image: "/album-poster.jpg",
   },
 ]
 
@@ -106,7 +106,7 @@ export default function DesignPage() {
           <div className="container">
             <div className="page-header">
               <h1 className="page-title">Design</h1>
-              <p className="page-description">식전영상, 리터칭, 그래픽 디자인 등 다양한 디자인 작업물을 확인하세요.</p>
+              <p className="page-description">식전영상, 리터칭, 그래픽 디자인 등<br/>다양한 디자인 작업물을 확인하세요.</p>
             </div>
 
             {/* 식전영상 Section */}

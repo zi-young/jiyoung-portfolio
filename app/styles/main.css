@@ -76,7 +76,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-md);
 }
 
 .header .logo {
@@ -328,7 +328,7 @@ body {
 .detail-title {
   font-size: var(--font-size-4xl);
   font-weight: 700;
-  margin-bottom: var(--spacing-md);
+  margin: var(--spacing-md) 0;
 }
 
 .detail-meta {
@@ -378,7 +378,6 @@ body {
   position: relative;
   width: 100%;
   max-width: 900px;
-  height: 480px;
   max-height: 80vh;
   cursor: grab;
   user-select: none;

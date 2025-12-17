@@ -12,7 +12,7 @@ const projects = [
   {
     id: 2,
     title: "Double Knew 사내 업무 통합 시스템",
-    description: "번역 프로젝트의 견적, 일정, 정산 등 전 과정을 한 플랫폼에서 관리할 수 있는 인트라넷입니다.",
+    description: "번역 프로젝트의 견적, 일정, 정산 등 전 과정을\n한 플랫폼에서 관리할 수 있는 인트라넷입니다.",
     category: "Web Development",
     tags: ["React", "TypeScript", "MUI (Material UI)", "React-gantt-chart"],
     image: "/tms-dashboard.png",
@@ -20,7 +20,7 @@ const projects = [
   {
     id: 3,
     title: "GS건설 하수처리장 통합 운영 시스템",
-    description: "하수처리장을 통합 관리하는 운영 시스템의 프론트엔드 퍼블리싱과 UI 개발을 담당했습니다.",
+    description: "하수처리장을 통합 관리하는 운영 시스템의\n프론트엔드 퍼블리싱과 UI 개발을 담당했습니다.",
     category: "Web Development",
     tags: ["eGovFramework", "JSP", "HTML"],
     image: "/gms-dashboard.png",
@@ -28,7 +28,7 @@ const projects = [
   {
     id: 4,
     title: "monkeysoft 자사 홈페이지",
-    description: "IT·AI Agent 솔루션을 소개하기 위해 제작한 자사몰 형태의 반응형 웹사이트입니다.",
+    description: "IT·AI Agent 솔루션을 소개하기 위해\n제작한 자사몰 형태의 반응형 웹사이트입니다.",
     category: "Web Development",
     tags: ["React", "MUI", "v0.dev Agent", "SMTP"],
     image: "/monkeysoft.png",
@@ -36,7 +36,7 @@ const projects = [
   {
     id: 5,
     title: "CJ대한통운 AI 분석 플랫폼 퍼블리싱",
-    description: "메가존에 2개월간 파견되어 CJ대한통운 AI 분석 플랫폼 구축 프로젝트의 퍼블리싱을 담당했습니다.",
+    description: "메가존에 3개월간 파견되어\nCJ대한통운 AI 분석 플랫폼 구축 프로젝트의 퍼블리싱을 담당했습니다.",
     category: "Web Development",
     tags: ["Vue.js", "Vuetify", "Zeplin", "HTML", "CSS", "JavaScript"],
     image: "/cj.png",
@@ -44,7 +44,7 @@ const projects = [
   {
     id: 6,
     title: "GS 크레인 운전자용 폐기물 조작·운영 시스템",
-    description: "크레인 운전자의 작업 효율을 높이기 위한 폐기물 제어 및 운영 시스템의 UI 퍼블리싱을 담당했습니다.",
+    description: "크레인 운전자의 작업 효율을 높이기 위한\n폐기물 제어 및 운영 시스템의 UI 퍼블리싱을 담당했습니다.",
     category: "Web Development",
     tags: ["React", "CSS", "Rem Unit", "Responsive Layout", "UI Widget"],
     image: "/3dvisual.png",
@@ -60,7 +60,7 @@ const projects = [
   {
     id: 8,
     title: "Bootstrap Responsive Website",
-    description: "Bootstrap만으로 구현한 반응형 웹사이트로, 심플하면서 브랜드 아이덴티티를 강조한 레이아웃을 제작했습니다.",
+    description: "Bootstrap만으로 구현한 반응형 웹사이트로,\n심플하면서 브랜드 아이덴티티를 강조한 레이아웃을 제작했습니다.",
     category: "Web Development",
     tags: ["Bootstrap", "HTML", "CSS", "Responsive Design"],
     image: "/bootstrap-main.png",
@@ -68,7 +68,7 @@ const projects = [
   {
     id: 9,
     title: "모바일 청첩장 웹사이트",
-    description: "네이버·카카오·티맵 내비게이션 연동과 참석자 관리 기능을 제공하는 반응형 모바일 청첩장입니다.",
+    description: "네이버·카카오·티맵 내비게이션 연동과\n참석자 관리 기능을 제공하는 반응형 모바일 청첩장입니다.",
     category: "Web Development",
     tags: ["React", "Supabase", "Netlify", "Kakao Map API", "Naver Map API", "Tmap API"],
     image: "/invite.png",
@@ -106,7 +106,7 @@ export default function PublishingPage() {
           <div className="container">
             <div className="page-header">
               <h1 className="page-title">Publishing / Frontend</h1>
-              <p className="page-description">다양한 웹 기술을 활용한 퍼블리싱 및 프론트엔드 프로젝트입니다.</p>
+              <p className="page-description">다양한 웹 기술을 활용한<br/>퍼블리싱 및 프론트엔드 프로젝트입니다.</p>
             </div>
 
             <div className="project-grid">
@@ -121,7 +121,7 @@ export default function PublishingPage() {
                     <div className="project-card-overlay">
                       <div className="project-card-overlay-content">
                         <h3>{project.title}</h3>
-                        <p>{project.description}</p>
+                        <p style={{ whiteSpace: "pre-wrap" }}>{project.description}</p>
                         <div className="project-card-overlay-buttons">
                           <span className="overlay-button">View Details</span>
                         </div>
@@ -138,7 +138,7 @@ export default function PublishingPage() {
                       ))}
                     </div>
                     <h3 className="project-card-title">{project.title}</h3>
-                    <p className="project-card-description">{project.description}</p>
+                    <p className="project-card-description" style={{ whiteSpace: "pre-wrap" }}>{project.description}</p>
                   </div>
                 </Link>
               ))}

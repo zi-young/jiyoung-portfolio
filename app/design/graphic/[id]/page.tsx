@@ -27,27 +27,26 @@ const projects = [
     date: "2025.12",
     role: "Brand Designer",
     image: ["/thingsminer-brand-identity.png", "/thingsminer-logo.png", "/thingsminer-icon.png"],
-    challenge: "데이터 분석 및 실시간 모니터링이라는 추상적인 기능을 직관적으로 표현하고, 사용자에게 기술적 신뢰감을 줄 수 있는 시각적 아이덴티티가 필요했습니다.",
     solution:
       "Figma Make AI를 도구로 활용하여 Google Material Design 컬러(Chrome CI)를 기반으로 친숙함과 기술적 신뢰도를 동시에 확보했습니다. 데이터의 흐름과 실시간성을 상징하는 '심박수(Pulse)' 파형을 4색 세그먼트 원형에 배치하여 분석과 통찰력을 시각화했으며, 파비콘과 앱 아이콘 등 다양한 매체에서 일관된 시인성을 갖도록 디자인했습니다.",
     result: "기술적 완성도와 포용성을 상징하는 로고 시스템을 확립하여 로그인 화면 및 대시보드 UI에 성공적으로 적용했으며, 솔루션의 전문적인 이미지를 강화했습니다."
   },
   {
     id: 3,
-    title: "Mobile App Interface",
-    description: "헬스케어 앱의 UI 디자인으로 직관적인 사용자 경험을 제공했습니다.",
-    category: "Mobile Design",
-    client: "Healthcare Startup",
-    date: "2024.05",
-    role: "UI Designer",
-    image: "/healthcare-mobile-app.png",
-    challenge:
-      "복잡한 건강 데이터를 이해하기 쉽게 시각화하고, 모든 연령대가 사용할 수 있는 인터페이스를 만들어야 했습니다.",
+    title: "Album, Poster & Fashion Detail Page Design",
+    description:
+      "앨범 커버와 프로모션 포스터,\n의류 쇼핑몰 상세페이지 디자인 작업입니다.\n브랜드 감성과 목적에 맞춘 시각적 구성을 통해\n각 콘텐츠의 분위기를 극대화했습니다.",
+    category: "Graphic Design · Visual Branding",
+    client: "Personal Project",
+    date: "2020",
+    role: "Designer",
+    tools: "Adobe Photoshop, Adobe Illustrator",
+    image: ["/album-poster.jpg","/fashion.jpg"],
     solution:
-      "직관적인 아이콘과 그래프를 활용하여 데이터를 시각화하고, 큰 터치 영역과 명확한 버튼 라벨로 접근성을 높였습니다. 단계별 온보딩 과정으로 앱 사용법을 쉽게 학습할 수 있도록 했습니다.",
+      "앨범 디자인은 아티스트의 감성과 콘셉트를 반영한 일러스트 중심의 무드로,\n포스터는 프로모션 목적에 맞게 깔끔하고 직관적인 레이아웃으로 구성했습니다.\n의류 상세페이지는 컬러 톤과 배경 질감을 통일해 브랜드의 감각적인 이미지를 강화했습니다.",
     result:
-      "앱 스토어 평점 4.7점을 기록했으며, 사용자 리뷰에서 '사용하기 쉽다'는 평가가 가장 많았습니다. DAU(일일 활성 사용자)가 출시 후 2개월간 꾸준히 증가했습니다.",
-  },
+      "감성적이면서도 상업적인 완성도를 갖춘 시리즈 디자인으로 완성되었으며,\n다양한 매체에 적용 가능한 비주얼 아이덴티티로 확장되었습니다.",
+  }
 ]
 
 import { useEffect } from "react"
@@ -126,7 +125,7 @@ export default function GraphicDetailPage({ params }: { params: Promise<{ id: st
                 <span>Date: {project.date}</span>
                 <span>Role: {project.role}</span>
               </div>
-              <p className="detail-description">{project.description}</p>
+              <p className="detail-description" style={{ whiteSpace: "pre-wrap" }}>{project.description}</p>
             </div>
 
             {/* 이미지 슬라이더 */}
@@ -181,18 +180,13 @@ export default function GraphicDetailPage({ params }: { params: Promise<{ id: st
 
             <div className="detail-content">
               <div className="detail-section">
-                <h2>Challenge</h2>
-                <p>{project.challenge}</p>
-              </div>
-
-              <div className="detail-section">
                 <h2>Solution</h2>
-                <p>{project.solution}</p>
+                <p style={{ whiteSpace: "pre-wrap" }}>{project.solution}</p>
               </div>
 
               <div className="detail-section">
                 <h2>Result</h2>
-                <p>{project.result}</p>
+                <p style={{ whiteSpace: "pre-wrap" }}>{project.result}</p>
               </div>
             </div>
           </div>

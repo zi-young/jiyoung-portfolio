@@ -109,7 +109,7 @@ const projects = [
       "UI의 일관성과 유지보수성이 크게 향상되었으며,\n코드 구조 최적화로 페이지 로딩 속도와 개발 효율이 개선되었습니다.\nCJ대한통운 내부 플랫폼의 사용자 경험(UX) 개선과 관리 효율 향상에 기여했습니다.",
   },
   {
-    id: 5,
+    id: 6,
     title: "GS 크레인 운전자용 폐기물 조작·운영 시스템",
     description: "크레인 운전자의 작업 효율을 높이기 위한 폐기물 제어 및 운영 시스템의 UI 퍼블리싱을 담당했습니다.\n3D 시각화 기반의 제어 화면을 직관적이고 실시간 대응이 가능하도록 구현했습니다.",
     category: "Industrial Control System (Web UI)",
@@ -124,7 +124,7 @@ const projects = [
       "해상도에 관계없이 균형 잡힌 레이아웃을 유지하면서, 실제 운전 환경에 최적화된 조작 UI를 완성했습니다.\n시각적 명확성과 조작 편의성이 향상되어, 작업 효율 및 시스템 안정성이 크게 개선되었습니다.",
   },
   {
-    id: 6,
+    id: 7,
     title: "공간 기록 웹사이트\n(Responsive Site)",
     description: "HTML, CSS, JavaScript로 제작한 반응형 개인 웹사이트로,\n디바이스 해상도에 따라 자동으로 레이아웃이 조정되는 구조로 구현했습니다.",
     category: "Responsive Web Design",
@@ -140,7 +140,7 @@ const projects = [
       "프레임워크 없이 순수 코드로 제작했음에도 반응성과 시각적 완성도를 확보했습니다.\n코드 구조가 단순해 유지보수가 용이하고, 반응형 디자인의 원리를 직접 검증한 프로젝트입니다.",
   },
   {
-    id: 7,
+    id: 8,
     title: "Bootstrap Responsive Website",
     description: "Bootstrap만으로 구현한 반응형 웹사이트로, 심플하면서 브랜드 아이덴티티를 강조한 레이아웃을 제작했습니다.",
     category: "Web Design",
@@ -154,22 +154,6 @@ const projects = [
       "Bootstrap의 그리드 시스템과 컴포넌트를 활용해 반응형 구조를 구현했습니다. 별도의 JavaScript 라이브러리 없이, 순수 Bootstrap 기능만으로 네비게이션, 카드 리스트, 이미지 섹션 등을 구성했습니다.",
     result:
       "PC, 태블릿, 모바일 등 다양한 화면 크기에서도 균형감 있는 레이아웃을 유지하며, 디자인 가이드 없이도 일관된 시각적 톤을 완성했습니다.",
-  },
-  {
-    id: 8,
-    title: "Landing Page Builder",
-    description: "마케팅용 랜딩페이지를 쉽고 빠르게 제작할 수 있는 빌더 툴입니다.",
-    category: "Web Tool",
-    client: "Startup",
-    date: "2025.03",
-    role: "Frontend Developer",
-    tags: ["Next.js", "Drag&Drop", "Builder"],
-    images: ["/landing-builder-main.png", "/landing-builder-edit.png"],
-    url: "https://zi-young.github.io/landing-builder/",
-    solution:
-      "Next.js와 Drag&Drop 라이브러리로 컴포넌트 기반의 페이지 빌더를 구현했습니다. 실시간 미리보기와 템플릿 기능을 제공합니다.",
-    result:
-      "비개발자도 쉽게 랜딩페이지를 제작할 수 있어, 마케팅팀의 업무 효율이 크게 향상되었습니다.",
   },
   {
   id: 9,
