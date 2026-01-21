@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 
 const projects = [
@@ -46,6 +48,11 @@ const projects = [
 ]
 
 export default function RetouchPage() {
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigator.clipboard.writeText("jypark912@naver.com")
+    alert("이메일이 복사되었습니다: jypark912@naver.com")
+  }
   return (
     <div className="page-retouch">
       {/* Header */}
@@ -111,17 +118,17 @@ export default function RetouchPage() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-social">
-              <a href="mailto:your.email@example.com" aria-label="Email">
-                ✉
+              <a href="#" onClick={handleEmailClick} aria-label="Email">
+                Email
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/zi-young" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 GitHub
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                LinkedIn
+              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                Blog
               </a>
             </div>
-            <p>© 2025 Portfolio. All rights reserved.</p>
+            <p>© 2026 Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>

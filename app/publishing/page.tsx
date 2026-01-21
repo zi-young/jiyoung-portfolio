@@ -1,9 +1,18 @@
+"use client"
+
 import Link from "next/link"
 
-const projects = [
-  {
-    id: 1,
-    title: "BF Kiosk Agent",
+export default function PublishingPage() {
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigator.clipboard.writeText("jypark912@naver.com")
+    alert("이메일이 복사되었습니다: jypark912@naver.com")
+  }
+
+  const projects = [
+    {
+      id: 1,
+      title: "BF Kiosk Agent",
     description: "한국지능정보사회진흥원(NIA) 주관 배리어프리 키오스크 접근성 지원도구 개발 프로젝트 퍼블리싱 및 프론트엔드 작업입니다.",
     category: "Public Project / Accessibility",
     tags: ["React", "iOS", "Android", "Accessibility", "Public Project"],
@@ -75,7 +84,6 @@ const projects = [
   }
 ]
 
-export default function PublishingPage() {
   return (
     <div className="page-publishing">
       {/* Header */}
@@ -95,6 +103,9 @@ export default function PublishingPage() {
               <Link href="/publishing" className="nav-link-active">
                 Publishing
               </Link>
+            </li>
+            <li>
+              <Link href="/ai">AI Contents</Link>
             </li>
           </ul>
         </nav>
@@ -152,17 +163,17 @@ export default function PublishingPage() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-social">
-              <a href="mailto:your.email@example.com" aria-label="Email">
-                ✉
+              <a href="#" onClick={handleEmailClick} aria-label="Email">
+                Email
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/zi-young?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 GitHub
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                LinkedIn
+              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                Blog
               </a>
             </div>
-            <p>© 2025 Portfolio. All rights reserved.</p>
+            <p>© 2026 Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>

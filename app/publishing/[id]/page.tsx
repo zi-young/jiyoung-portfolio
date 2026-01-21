@@ -344,7 +344,7 @@ export default function PublishingDetailPage({
           <div className="footer-content">
             <div className="footer-social">
               <a href="mailto:your.email@example.com" aria-label="Email">
-                ✉
+                Email
               </a>
               <a
                 href="https://github.com"
@@ -355,15 +355,15 @@ export default function PublishingDetailPage({
                 GitHub
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://Blog.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
+                aria-label="Blog"
               >
-                LinkedIn
+                Blog
               </a>
             </div>
-            <p>© 2025 Portfolio. All rights reserved.</p>
+            <p>© 2026 Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>

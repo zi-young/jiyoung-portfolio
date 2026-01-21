@@ -8,12 +8,29 @@ const projects = [
   {
     id: 1,
     title: "2025 MonkeySoft Recruitment Notice Design",
-    description: "미리캔버스를 활용하여 기업의 전문성과 친근함을 동시에 전달하는 경력사원 채용 공고를 디자인했습니다.",
+    description: "미리캔버스를 이용한 템플릿 활용 디자인으로 기업의 전문성과 친근함을 동시에 전달하는\n경력사원 채용 공고를 디자인했습니다.",
     category: "Content Design",
     client: "MonkeySoft",
     date: "2025.03",
     role: "Content Designer",
-    image: "/monkeysoft-recruitment-notice.jpg",
+    images: [
+      {
+        src: "/monkeysoft-recruitment-notice.jpg",
+        title: "MonkeySoft 채용공고 디자인",
+        alt: "신뢰감 있는 블루 컬러로 IT 기업의 전문성을 강조한 채용 공고",
+        description: "신뢰감을 주는 블루 컬러를 메인으로 사용하여 IT 기업의 전문성을 강조한 채용 공고입니다. 줄글 형태의 복지와 인재상 정보를 아이콘과 시각 자료로 구조화하여 가독성을 높였습니다.",
+        solution: "블루 컬러 기반의 신뢰감 있는 디자인으로 IT 기업의 전문성을 표현하고, 시각적 계층 구조를 통해 정보 습득을 용이하게 했습니다.",
+        result: "텍스트 위주의 공고에서 벗어나 시각적으로 정돈된 채용 공고가 되어 지원자들의 정보 습득 시간이 단축되었습니다."
+      },
+      {
+        src: "/thingsMiner_소개서- 복사본.jpg",
+        title: "MonkeySoft 소개서 디자인",
+        alt: "기업 문화와 복지 정보를 시각화한 소개 자료",
+        description: "일하는 방식과 근무 공간의 실제 사진을 배치하여 기업 문화를 간접 경험할 수 있도록 설계한 소개서입니다. 기업의 긍정적인 브랜딩을 강조합니다.",
+        solution: "실제 업무 환경 사진과 함께 기업의 복지 및 문화를 시각적으로 표현하여 구직자들이 기업을 더 잘 이해할 수 있도록 했습니다.",
+        result: "회사의 긍정적인 이미지와 업무 환경이 명확하게 전달되어 지원율 증가에 기여했습니다."
+      }
+    ],
     solution:
      "신뢰감을 주는 블루 컬러를 메인으로 사용하여 IT 기업의 전문성을 강조했습니다. 줄글 형태의 복지와 인재상 정보를 아이콘과 시각 자료로 구조화하여 가독성을 높였으며, '일하는 방식'과 '근무 공간' 실제 사진을 배치하여 기업 문화를 간접 경험할 수 있도록 정보 계층을 설계했습니다.",
     result: "텍스트 위주의 딱딱한 공고에서 벗어나 시각적으로 정돈된 디자인을 제공함으로써, 기업의 긍정적인 브랜딩 효과를 높이고 지원자들의 정보 습득 시간을 단축시켰습니다."
@@ -55,6 +72,12 @@ export default function GraphicDetailPage({ params }: { params: Promise<{ id: st
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [project, setProject] = useState<any>(null)
 
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigator.clipboard.writeText("jypark912@naver.com")
+    alert("이메일이 복사되었습니다: jypark912@naver.com")
+  }
+
   useEffect(() => {
     params.then(({ id }) => {
       const found = projects.find((p) => p.id === Number(id))
@@ -68,12 +91,15 @@ export default function GraphicDetailPage({ params }: { params: Promise<{ id: st
     return null
   }
 
-  // 이미지 배열 처리
-  const images = Array.isArray(project.image)
-    ? project.image
+  // 이미지 배열 처리 (images 또는 image)
+  const images = project.images || (Array.isArray(project.image)
+    ? project.image.map((src: string) => ({ src }))
     : project.image
-    ? [project.image]
-    : []
+    ? [{ src: project.image }]
+    : [])
+
+  const currentImageData = images[currentImageIndex] || {}
+  const currentImageSrc = currentImageData.src || images[currentImageIndex]
 
   const handlePrevImage = () => {
     setCurrentImageIndex((prev) =>
@@ -131,11 +157,18 @@ export default function GraphicDetailPage({ params }: { params: Promise<{ id: st
             {/* 이미지 슬라이더 */}
             <div className="detail-image" style={{ position: "relative", maxWidth: 600, margin: "0 auto" }}>
               {images.length > 0 && (
-                <img
-                  src={images[currentImageIndex] || "/placeholder.svg"}
-                  alt={project.title}
-                  style={{ width: "100%", borderRadius: 8, boxShadow: "0 2px 8px #0001" }}
-                />
+                <>
+                  <img
+                    src={currentImageSrc || "/placeholder.svg"}
+                    alt={currentImageData.alt || project.title}
+                    style={{ width: "100%", borderRadius: 8, boxShadow: "0 2px 8px #0001" }}
+                  />
+                  {currentImageData.title && (
+                    <p style={{ marginTop: 12, textAlign: "center", fontSize: 14, color: "#666", fontWeight: 500 }}>
+                      {currentImageData.title}
+                    </p>
+                  )}
+                </>
               )}
               {images.length > 1 && (
                 <>
@@ -179,15 +212,36 @@ export default function GraphicDetailPage({ params }: { params: Promise<{ id: st
             </div>
 
             <div className="detail-content">
-              <div className="detail-section">
-                <h2>Solution</h2>
-                <p style={{ whiteSpace: "pre-wrap" }}>{project.solution}</p>
-              </div>
+              {currentImageData.description && (
+                <div className="detail-section">
+                  <h2 style={{ fontSize: 14, fontWeight: 500, marginBottom: 12, color: "#999", letterSpacing: 0.5, textTransform: "uppercase" }}>Image Description</h2>
+                  <p style={{ whiteSpace: "pre-wrap", fontSize: 13, color: "#777", lineHeight: 1.6 }}>{currentImageData.description}</p>
+                </div>
+              )}
 
-              <div className="detail-section">
-                <h2>Result</h2>
-                <p style={{ whiteSpace: "pre-wrap" }}>{project.result}</p>
-              </div>
+              {currentImageData.solution ? (
+                <div className="detail-section" style={{ marginTop: 24 }}>
+                  <h2>Solution</h2>
+                  <p style={{ whiteSpace: "pre-wrap" }}>{currentImageData.solution}</p>
+                </div>
+              ) : (
+                <div className="detail-section" style={{ marginTop: 24 }}>
+                  <h2>Solution</h2>
+                  <p style={{ whiteSpace: "pre-wrap" }}>{project.solution}</p>
+                </div>
+              )}
+
+              {currentImageData.result ? (
+                <div className="detail-section" style={{ marginTop: 24 }}>
+                  <h2>Result</h2>
+                  <p style={{ whiteSpace: "pre-wrap" }}>{currentImageData.result}</p>
+                </div>
+              ) : (
+                <div className="detail-section" style={{ marginTop: 24 }}>
+                  <h2>Result</h2>
+                  <p style={{ whiteSpace: "pre-wrap" }}>{project.result}</p>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -198,17 +252,17 @@ export default function GraphicDetailPage({ params }: { params: Promise<{ id: st
         <div className="container">
           <div className="footer-content">
             <div className="footer-social">
-              <a href="mailto:your.email@example.com" aria-label="Email">
-                ✉
+              <a href="#" onClick={handleEmailClick} aria-label="Email">
+                Email
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/zi-young" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 GitHub
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                LinkedIn
+              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                Blog
               </a>
             </div>
-            <p>© 2025 Portfolio. All rights reserved.</p>
+            <p>© 2026 Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>

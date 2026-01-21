@@ -1,6 +1,7 @@
+"use client"
+
 import Link from "next/link"
 
-// 식전영상 projects
 const weddingVideos = [
   {
     id: 1,
@@ -29,24 +30,24 @@ const weddingVideos = [
 const retouchProjects = [
   {
     id: 1,
-    title: "Portrait Retouching",
-    description: "인물 보정 - 자연스러운 피부 톤 및 디테일 강화",
-    category: "Beauty Retouch",
-    image: "/wedding1_after.jpg",
+    title: "Wedding Retouching",
+    description: "웨딩사진 보정 - 자연스러운 보정과 피부·드레스 디테일 강화",
+    category: "Wedding Retouch",
+    image: "/retouching/wedding1.jpg",
   },
   {
     id: 2,
-    title: "Fashion Editorial",
-    description: "패션 에디토리얼 보정 - 색감 보정 및 합성",
-    category: "Fashion",
-    image: "/fashion-editorial-photo.jpg",
+    title: "Portrait Retouching",
+    description: "인물 보정 - 자연스러운 피부 톤 및 디테일 강화",
+    category: "Beauty Retouch",
+    image: "/retouching/profile1.png",
   },
   {
     id: 3,
-    title: "Product Photography",
-    description: "제품 사진 보정 - 배경 제거 및 색상 보정",
-    category: "Commercial",
-    image: "/product-photography-retouch.jpg",
+    title: "Fashion Editorial",
+    description: "패션 에디토리얼 보정 - 색감 보정 및 몸매라인 강조",
+    category: "Fashion",
+    image: "/retouching/body1.PNG",
   },
 ]
 
@@ -54,10 +55,14 @@ const retouchProjects = [
 const designProjects = [
   {
     id: 1,
-    title: "2025 MonkeySoft 채용공고 디자인",
-    description: "미리캔버스를 활용하여 기업의 전문성과 친근함을 동시에 전달하는 경력사원 채용 공고를 디자인했습니다.",
+    title: "MonkeySoft 채용공고 및 회사소개서 디자인",
+    description: "미리캔버스를 이용한 템플릿 활용 디자인으로\n기업의 전문성에 어울리는 디자인으로 각종 작업을 하였습니다.",
     category: "Content Design",
     image: "/monkeysoft-recruitment-notice.jpg",
+    images: [
+      "/monkeysoft-recruitment-notice.jpg",
+      "/thingsMiner_소개서- 복사본.jpg"
+    ]
   },
   {
     id: 2,
@@ -69,13 +74,19 @@ const designProjects = [
   {
     id: 3,
     title: "Album, Poster & Fashion Detail Page Design",
-    description:"앨범 커버와 프로모션 포스터, 의류 쇼핑몰 상세페이지 디자인 작업입니다.",
+    description:"앨범 커버와 프로모션 포스터,\n의류 쇼핑몰 상세페이지 디자인 작업입니다.",
     category: "Graphic Design · Visual Branding",
     image: "/album-poster.jpg",
   },
 ]
 
 export default function DesignPage() {
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigator.clipboard.writeText("jypark912@naver.com")
+    alert("이메일이 복사되었습니다: jypark912@naver.com")
+  }
+
   return (
     <div className="page-design">
       {/* Header */}
@@ -95,6 +106,9 @@ export default function DesignPage() {
             </li>
             <li>
               <Link href="/publishing">Publishing</Link>
+            </li>
+            <li>
+              <Link href="/ai">AI Contents</Link>
             </li>
           </ul>
         </nav>
@@ -216,19 +230,17 @@ export default function DesignPage() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-social">
-              <a
-                href="https://blog.naver.com/ruruha_"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Naver Blog"
-              >
-                Naver Blog
+              <a href="#" onClick={handleEmailClick} aria-label="Email">
+                Email
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                LinkedIn
+              <a href="https://github.com/zi-young?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                GitHub
+              </a>
+              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                Blog
               </a>
             </div>
-            <p>© 2025 Portfolio. All rights reserved.</p>
+            <p>© 2026 Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>

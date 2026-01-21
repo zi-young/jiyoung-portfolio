@@ -141,16 +141,16 @@ export default function WeddingVideoDetailPage({ params }: { params: Promise<{ i
           <div className="footer-content">
             <div className="footer-social">
               <a href="mailto:your.email@example.com" aria-label="Email">
-                ✉
+                Email
               </a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 GitHub
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                LinkedIn
+              <a href="https://Blog.com" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                Blog
               </a>
             </div>
-            <p>© 2025 Portfolio. All rights reserved.</p>
+            <p>© 2026 Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>

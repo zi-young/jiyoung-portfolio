@@ -1,6 +1,14 @@
+"use client"
+
 import Link from "next/link"
 
 export default function HomePage() {
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigator.clipboard.writeText("jypark912@naver.com")
+    alert("이메일이 복사되었습니다: jypark912@naver.com")
+  }
+
   return (
     <div>
       {/* Header */}
@@ -15,6 +23,9 @@ export default function HomePage() {
             </li>
             <li>
               <Link href="/publishing">Publishing</Link>
+            </li>
+            <li>
+              <Link href="/ai">AI Contents</Link>
             </li>
           </ul>
         </nav>
@@ -38,6 +49,9 @@ export default function HomePage() {
                 <Link href="/publishing" className="button button-outline">
                   Publishing
                 </Link>
+                <Link href="/ai" className="button button-outline">
+                  AI Contents
+                </Link>
               </div>
             </div>
           </div>
@@ -49,17 +63,17 @@ export default function HomePage() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-social">
-              <a href="mailto:your.email@example.com" aria-label="Email">
-                ✉
+              <a href="#" onClick={handleEmailClick} aria-label="Email">
+                Email
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/zi-young" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 GitHub
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                LinkedIn
+              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                Blog
               </a>
             </div>
-            <p>© 2025 Portfolio. All rights reserved.</p>
+            <p>© 2026 Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -12,20 +12,17 @@ const sections = [
     projects: [
       {
         title: "웨딩 인물보정 1",
-        beforeImage: "/wedding1_before.jpg",
-        afterImage: "/wedding1_after.jpg",
+        image: "/retouchihng/wedding1.jpg",
         description: "웨딩 촬영에서 자연스러운 피부와 밝은 분위기를 강조한 보정.",
       },
       {
         title: "웨딩 인물보정 2",
-        beforeImage: "/wedding2_before.jpg",
-        afterImage: "/wedding2_after.jpg",
+        image: "/retouchihng/wedding2.jpg",
         description: "신부의 드레스와 메이크업을 돋보이게 하는 색감 보정.",
       },
       {
         title: "웨딩 인물보정 3",
-        beforeImage: "/wedding3_before.jpg",
-        afterImage: "/wedding3_after.jpg",
+        image: "/retouchihng/wedding3.jpg",
         description: "밝고 화사한 피부톤과 헤어 디테일 강조.",
       },
     ],
@@ -35,21 +32,23 @@ const sections = [
     projects: [
       {
         title: "프로필 보정 1",
-        beforeImage: "/profile1_before.jpg",
-        afterImage: "/profile1_after.jpg",
-        description: "자연스러운 피부결과 눈빛 보정.",
+        image: "/retouching/profile1.png",
+        description: "자연스러운 피부결과 화장.",
       },
       {
         title: "프로필 보정 2",
-        beforeImage: "/profile2_before.jpg",
-        afterImage: "/profile2_after.jpg",
-        description: "헤어라인과 얼굴 윤곽 강조.",
+        image: "/retouching/profile2.png",
+        description: "헤어라인과 자연스러운 미소 연출.",
       },
       {
         title: "프로필 보정 3",
-        beforeImage: "/profile3_before.jpg",
-        afterImage: "/profile3_after.jpg",
-        description: "밝은 인상과 자연스러운 미소 연출.",
+        image: "/retouching/profile3.PNG",
+        description: "얼굴윤곽과 자연스러운 피부 연출.",
+      },
+      {
+        title: "프로필 보정 4",
+        image: "/retouching/profile4.PNG",
+        description: "얼굴윤곽과 톤 보정.",
       },
     ],
   },
@@ -58,20 +57,17 @@ const sections = [
     projects: [
       {
         title: "바디 보정 1",
-        beforeImage: "/body1_before.jpg",
-        afterImage: "/body1_after.jpg",
-        description: "몸매 라인과 피부결 강조.",
+        image: "/retouching/body1.PNG",
+        description: "자연스러운 바지 핏 보정.",
       },
       {
         title: "바디 보정 2",
-        beforeImage: "/body2_before.jpg",
-        afterImage: "/body2_after.jpg",
+        image: "/retouchihng/body2.jpg",
         description: "근육과 실루엣을 자연스럽게 보정.",
       },
       {
         title: "바디 보정 3",
-        beforeImage: "/body3_before.jpg",
-        afterImage: "/body3_after.jpg",
+        image: "/retouchihng/body3.jpg",
         description: "피부톤과 바디 밸런스 보정.",
       },
     ],
@@ -81,10 +77,12 @@ const sections = [
 export default function RetouchDetailPage() {
   // 각 섹션별 메인 슬라이더 인덱스 관리
   const [mainIndexes, setMainIndexes] = useState(sections.map(() => 0))
-  // 각 섹션별 before/after 슬라이더 위치 관리
-  const [sliderPositions, setSliderPositions] = useState(
-    sections.map(() => [50, 50, 50])
-  )
+
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    navigator.clipboard.writeText("jypark912@naver.com")
+    alert("이메일이 복사되었습니다: jypark912@naver.com")
+  }
 
   const handleMainPrev = (sectionIdx: number) => {
     setMainIndexes((prev) =>
@@ -107,16 +105,6 @@ export default function RetouchDetailPage() {
           : idx
       )
     )
-  }
-  const handleSliderChange = (sectionIdx: number, projectIdx: number, value: number) => {
-    setSliderPositions((prev) => {
-      const updated = prev.map((arr, sIdx) =>
-        sIdx === sectionIdx
-          ? arr.map((v, pIdx) => (pIdx === projectIdx ? value : v))
-          : arr
-      )
-      return updated
-    })
   }
 
   return (
@@ -185,7 +173,7 @@ export default function RetouchDetailPage() {
                     >
                       ›
                     </button>
-                    {/* before/after 슬라이더 */}
+                    {/* 이미지 */}
                     <div
                       style={{
                         width: "100%",
@@ -194,58 +182,12 @@ export default function RetouchDetailPage() {
                       }}
                     >
                       <div className="before-after-container">
-                        <div className="before-after-labels">
-                          <span className="before-label">Before</span>
-                          <span className="after-label">After</span>
-                        </div>
-                        <div className="before-after-slider">
-                          <div className="before-after-images">
-                            <img
-                              src={project.afterImage || "/placeholder.svg?height=1080&width=1920"}
-                              alt={`${project.title} - After`}
-                              className="image-after"
-                            />
-                            <div
-                              className="image-before-wrapper"
-                              style={{ clipPath: `inset(0 ${100 - sliderPositions[sectionIdx][projectIdx]}% 0 0)` }}
-                            >
-                              <img
-                                src={project.beforeImage || "/placeholder.svg?height=1080&width=1920"}
-                                alt={`${project.title} - Before`}
-                                className="image-before"
-                              />
-                            </div>
-                            <div className="slider-line" style={{ left: `${sliderPositions[sectionIdx][projectIdx]}%` }}>
-                              <div className="slider-handle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <path
-                                    d="M15 18L9 12L15 6"
-                                    stroke="white"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                  />
-                                </svg>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <path
-                                    d="M9 18L15 12L9 6"
-                                    stroke="white"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                  />
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <input
-                            type="range"
-                            min="0"
-                            max="100"
-                            value={sliderPositions[sectionIdx][projectIdx]}
-                            onChange={e => handleSliderChange(sectionIdx, projectIdx, Number(e.target.value))}
-                            className="slider-input"
-                            aria-label="Before/After slider"
+                        <div className="before-after-images">
+                          <img
+                            src={project.image || "/placeholder.svg?height=1080&width=1920"}
+                            alt={project.title}
+                            className="image-after"
+                            style={{ width: "100%" }}
                           />
                         </div>
                         <div style={{ marginTop: 8, textAlign: "center", fontSize: 15, color: "#555" }}>{project.description}</div>
@@ -286,17 +228,17 @@ export default function RetouchDetailPage() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-social">
-              <a href="mailto:your.email@example.com" aria-label="Email">
-                ✉
+              <a href="#" onClick={handleEmailClick} aria-label="Email">
+                Email
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/zi-young" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 GitHub
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                LinkedIn
+              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                Blog
               </a>
             </div>
-            <p>© 2025 Portfolio. All rights reserved.</p>
+            <p>© 2026 Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>
