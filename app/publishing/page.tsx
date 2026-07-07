@@ -77,7 +77,7 @@ export default function PublishingPage() {
   {
     id: 9,
     title: "모바일 청첩장 웹사이트",
-    description: "네이버·카카오·티맵 내비게이션 연동과\n참석자 관리 기능을 제공하는 반응형 모바일 청첩장입니다.",
+    description: "네이버·카카오·티맵 내비게이션 연동을 제공하는 반응형 모바일 청첩장입니다.",
     category: "Web Development",
     tags: ["React", "Supabase", "Netlify", "Kakao Map API", "Naver Map API", "Tmap API"],
     image: "/invite.png",

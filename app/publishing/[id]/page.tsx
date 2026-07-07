@@ -158,16 +158,16 @@ const projects = [
   {
   id: 9,
   title: "모바일 청첩장 웹 애플리케이션",
-  description: "네이버·카카오·티맵 내비게이션 연동과 참석자 관리 기능을 제공하는 반응형 모바일 청첩장입니다.",
+  description: "네이버·카카오·티맵 내비게이션 연동을 지원하는 반응형 모바일 청첩장입니다.",
   category: "Web Developer",
   client: "Personal Project",
   date: "2025.09",
   role: "Frontend Developer",
-  tags: ["React", "Supabase", "Netlify", "Kakao Map API", "Naver Map API", "Tmap API"],
-  images: ["/invite.png", "/invite-rsvp.png"],
-  url: "https://hm-invite.netlify.app/",
+  tags: ["React", "Netlify", "Kakao Map API", "Naver Map API", "Tmap API"],
+  images: ["/invite.png"],
+  url: "https://anne-jun-wedding.netlify.app/",
   solution:
-    "React로 모바일 최적화된 UI를 제작하고, 네이버·카카오·티맵 내비게이션 API를 연동해 길찾기 기능을 구현했습니다. Supabase를 통해 참석 여부 데이터를 관리하며, Netlify를 이용해 배포했습니다.",
+    "React로 모바일 최적화된 UI를 제작하고, 네이버·카카오·티맵 내비게이션 API를 연동해 길찾기 기능을 구현했습니다. Netlify를 이용해 배포했습니다.",
   result:
     "초대장 접근성과 편의성이 크게 향상되어, 비회원 사용자도 손쉽게 위치 확인과 참석 응답이 가능했습니다.",
   }
