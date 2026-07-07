@@ -3,8 +3,7 @@
 import type React from "react"
 
 import Link from "next/link"
-import { notFound } from "next/navigation"
-import { useState, use } from "react"
+import { useState } from "react"
 
 const sections = [
   {
@@ -13,16 +12,19 @@ const sections = [
       {
         title: "웨딩 인물보정 1",
         image: "/retouchihng/wedding1.jpg",
+        isReady: false,
         description: "웨딩 촬영에서 자연스러운 피부와 밝은 분위기를 강조한 보정.",
       },
       {
         title: "웨딩 인물보정 2",
         image: "/retouchihng/wedding2.jpg",
+        isReady: false,
         description: "신부의 드레스와 메이크업을 돋보이게 하는 색감 보정.",
       },
       {
         title: "웨딩 인물보정 3",
         image: "/retouchihng/wedding3.jpg",
+        isReady: false,
         description: "밝고 화사한 피부톤과 헤어 디테일 강조.",
       },
     ],
@@ -63,11 +65,13 @@ const sections = [
       {
         title: "바디 보정 2",
         image: "/retouchihng/body2.jpg",
+        isReady: false,
         description: "근육과 실루엣을 자연스럽게 보정.",
       },
       {
         title: "바디 보정 3",
         image: "/retouchihng/body3.jpg",
+        isReady: false,
         description: "피부톤과 바디 밸런스 보정.",
       },
     ],
@@ -150,6 +154,7 @@ export default function RetouchDetailPage() {
             {sections.map((section, sectionIdx) => {
               const projectIdx = mainIndexes[sectionIdx]
               const project = section.projects[projectIdx]
+              const isProjectReady = project.isReady !== false
               return (
                 <div key={section.title} className="retouch-section slide-in-up" style={{ marginBottom: 48 }}>
                   <h2 style={{ marginBottom: 16 }}>{section.title}</h2>
@@ -183,12 +188,32 @@ export default function RetouchDetailPage() {
                     >
                       <div className="before-after-container">
                         <div className="before-after-images">
-                          <img
-                            src={project.image || "/placeholder.svg?height=1080&width=1920"}
-                            alt={project.title}
-                            className="image-after"
-                            style={{ width: "100%" }}
-                          />
+                          {isProjectReady ? (
+                            <img
+                              src={project.image || "/placeholder.svg?height=1080&width=1920"}
+                              alt={project.title}
+                              className="image-after"
+                              style={{ width: "100%" }}
+                            />
+                          ) : (
+                            <div
+                              className="image-after"
+                              style={{
+                                width: "100%",
+                                minHeight: 420,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                background: "linear-gradient(135deg, #f7f4f0 0%, #ece7e2 100%)",
+                                border: "1px solid rgba(0, 0, 0, 0.08)",
+                                color: "#6f6258",
+                                fontSize: 22,
+                                fontWeight: 700,
+                              }}
+                            >
+                              준비중
+                            </div>
+                          )}
                         </div>
                         <div style={{ marginTop: 8, textAlign: "center", fontSize: 15, color: "#555" }}>{project.description}</div>
                       </div>

@@ -34,6 +34,7 @@ const retouchProjects = [
     description: "웨딩사진 보정 - 자연스러운 보정과 피부·드레스 디테일 강화",
     category: "Wedding Retouch",
     image: "/retouching/wedding1.jpg",
+    isReady: false,
   },
   {
     id: 2,
@@ -123,69 +124,58 @@ export default function DesignPage() {
               <p className="page-description">식전영상, 리터칭, 그래픽 디자인 등<br/>다양한 디자인 작업물을 확인하세요.</p>
             </div>
 
-            {/* 식전영상 Section */}
-            <div className="design-section">
-              <h2 className="section-subtitle">Wedding Films</h2>
-              <div className="project-grid">
-                {weddingVideos.map((project) => (
-                  <Link
-                    key={project.id}
-                    href={`/design/wedding-video/${project.id}`}
-                    className="project-card project-card-design"
-                  >
-                    <div className="project-card-image-wrapper">
-                      <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        className="project-card-image"
-                      />
-                      <div className="project-card-overlay">
-                        <div className="project-card-overlay-content">
-                          <h3>{project.title}</h3>
-                          <p>{project.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-card-content">
-                      <span className="project-card-category">{project.category}</span>
-                      <h3 className="project-card-title">{project.title}</h3>
-                      <p className="project-card-description">{project.description}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
             {/* 리터칭 Section */}
             <div className="design-section">
               <h2 className="section-subtitle">Photo Retouching</h2>
               <div className="project-grid">
-                {retouchProjects.map((project) => (
-                  <Link
-                    key={project.id}
-                    href={`/design/retouch/${project.id}`}
-                    className="project-card project-card-design"
-                  >
-                    <div className="project-card-image-wrapper">
-                      <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        className="project-card-image"
-                      />
-                      <div className="project-card-overlay">
-                        <div className="project-card-overlay-content">
-                          <h3>{project.title}</h3>
-                          <p>{project.description}</p>
+                {retouchProjects.map((project) => {
+                  const isProjectReady = project.isReady !== false
+
+                  return (
+                    <Link
+                      key={project.id}
+                      href={`/design/retouch/${project.id}`}
+                      className="project-card project-card-design"
+                    >
+                      <div className="project-card-image-wrapper">
+                        {isProjectReady ? (
+                          <img
+                            src={project.image || "/placeholder.svg"}
+                            alt={project.title}
+                            className="project-card-image"
+                          />
+                        ) : (
+                          <div
+                            className="project-card-image"
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              background: "linear-gradient(135deg, #f7f4f0 0%, #ece7e2 100%)",
+                              border: "1px solid rgba(0, 0, 0, 0.08)",
+                              color: "#6f6258",
+                              fontSize: 22,
+                              fontWeight: 700,
+                            }}
+                          >
+                            준비중
+                          </div>
+                        )}
+                        <div className="project-card-overlay">
+                          <div className="project-card-overlay-content">
+                            <h3>{project.title}</h3>
+                            <p>{project.description}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="project-card-content">
-                      <span className="project-card-category">{project.category}</span>
-                      <h3 className="project-card-title">{project.title}</h3>
-                      <p className="project-card-description">{project.description}</p>
-                    </div>
-                  </Link>
-                ))}
+                      <div className="project-card-content">
+                        <span className="project-card-category">{project.category}</span>
+                        <h3 className="project-card-title">{project.title}</h3>
+                        <p className="project-card-description">{project.description}</p>
+                      </div>
+                    </Link>
+                  )
+                })}
               </div>
             </div>
 
@@ -197,6 +187,38 @@ export default function DesignPage() {
                   <Link
                     key={project.id}
                     href={`/design/graphic/${project.id}`}
+                    className="project-card project-card-design"
+                  >
+                    <div className="project-card-image-wrapper">
+                      <img
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        className="project-card-image"
+                      />
+                      <div className="project-card-overlay">
+                        <div className="project-card-overlay-content">
+                          <h3>{project.title}</h3>
+                          <p>{project.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="project-card-content">
+                      <span className="project-card-category">{project.category}</span>
+                      <h3 className="project-card-title">{project.title}</h3>
+                      <p className="project-card-description">{project.description}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            {/* 식전영상 Section */}
+            <div className="design-section">
+              <h2 className="section-subtitle">Wedding Films</h2>
+              <div className="project-grid">
+                {weddingVideos.map((project) => (
+                  <Link
+                    key={project.id}
+                    href={`/design/wedding-video/${project.id}`}
                     className="project-card project-card-design"
                   >
                     <div className="project-card-image-wrapper">
