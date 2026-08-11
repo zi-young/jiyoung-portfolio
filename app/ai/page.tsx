@@ -1,127 +1,91 @@
 "use client"
 
 import Link from "next/link"
+import { AIContentCard } from "./ai-content-card"
+import { aiPlaygroundItems, campaignFrameItems, typoLabItems } from "../../data/works"
 
-export const aiProjects = [
+const sections = [
   {
-    id: 1,
-    title: "고양이가 일하는 AI 쇼츠",
-    description: "Google Gemini와 Veo3를 활용하여 생성한 고양이가 타코야끼 판매하는 AI 쇼츠입니다.",
-    category: "AI Video Generation",
-    image: "/AI_contents/haru.png",
-    video: "/AI_contents/haru.MP4",
-    youtubeUrl: "https://www.youtube.com/shorts/hRzyHw9dky8",
+    id: "brand-studio",
+    eyebrow: "01 / BX BRANDING",
+    title: "Brand Studio",
+    description: "브랜드 컨셉부터 패키지와 캠페인 비주얼까지 확장한 AI 기반 BX 디자인",
+    tone: "campaign",
+    items: campaignFrameItems,
   },
   {
-    id: 2,
-    title: "AI-Generated Motion Graphics",
-    description: "Veo와 Google AI를 활용하여 생성한 고양이 콘텐츠입니다.",
-    category: "AI Video Generation",
-    image: "/AI_contents/haru2.png",
-    video: "/AI_contents/haru2.MP4",
-    youtubeUrl: "https://www.youtube.com/watch?v=SPC8Aysu4AE",
+    id: "visual-lab",
+    eyebrow: "02 / GRAPHIC & TYPE",
+    title: "Visual Lab",
+    description: "그래픽 구성과 글자의 형태, 재질을 탐색하는 타이포그래피 비주얼 스터디",
+    tone: "typo",
+    items: typoLabItems,
   },
   {
-    id: 3,
-    title: "AI-Generated Motion Graphics",
-    description: "Veo와 Google AI를 활용하여 장면전환과 음성을 넣은 영상입니다.",
-    category: "AI Video Generation",
-    image: "/AI_contents/youtube2.png",
-    video: "/AI_contents/youtube2.MP4",
+    id: "motion-lab",
+    eyebrow: "03 / SHORT-FORM CONTENT",
+    title: "Motion Lab",
+    description: "캐릭터와 짧은 이야기를 움직임으로 확장한 AI 숏폼 콘텐츠 실험",
+    tone: "playground",
+    items: aiPlaygroundItems,
   },
 ]
 
 export default function AIPage() {
-  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    navigator.clipboard.writeText("jypark912@naver.com")
+  const handleEmailClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    void navigator.clipboard.writeText("jypark912@naver.com")
     alert("이메일이 복사되었습니다: jypark912@naver.com")
   }
 
   return (
     <div className="page-ai">
-      {/* Header */}
       <header className="header">
         <nav className="container">
-          <Link href="/" className="logo">
-            Portfolio
-          </Link>
+          <Link href="/" className="logo">Portfolio</Link>
           <ul className="nav-links">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/design">Design</Link>
-            </li>
-            <li>
-              <Link href="/publishing">Publishing</Link>
-            </li>
-            <li>
-              <Link href="/ai" className="nav-link-active">
-                AI Contents
-              </Link>
-            </li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/design">Design</Link></li>
+            <li><Link href="/publishing">Publishing</Link></li>
+            <li><Link href="/ai" className="nav-link-active">AI Contents</Link></li>
           </ul>
         </nav>
       </header>
 
-      {/* Main Content */}
       <main className="main">
-        <section className="section">
-          <div className="container">
-            <div className="page-header">
-              <h1 className="page-title">AI Contents</h1>
-              <p className="page-description">Veo, Google AI 등을 활용한<br/>영상·이미지 작업물 소개</p>
-            </div>
-
-            <div className="project-grid">
-              {aiProjects.map((project) => (
-                <Link
-                  key={project.id}
-                  href={`/ai/${project.id}`}
-                  className="project-card project-card-ai"
-                >
-                  <div className="project-card-image-wrapper">
-                    <img src={project.image || "/placeholder.svg"} alt={project.title} className="project-card-image" />
-                    <div className="project-card-overlay">
-                      <div className="project-card-overlay-content">
-                        <h3>{project.title}</h3>
-                        <p style={{ whiteSpace: "pre-wrap" }}>{project.description}</p>
-                        <div className="project-card-overlay-buttons">
-                          <span className="overlay-button">View Details</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="project-card-content">
-                    <span className="project-card-category">{project.category}</span>
-                    <h3 className="project-card-title">{project.title}</h3>
-                    <p className="project-card-description" style={{ whiteSpace: "pre-wrap" }}>{project.description}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <section className="ai-hero container">
+          <span>SELECTED AI WORKS · 2026</span>
+          <h1>AI Contents</h1>
+          <p>아이디어를 이미지로, 이미지를 움직이는 이야기로.<br />도구의 가능성을 탐색하며 만든 AI 콘텐츠 아카이브입니다.</p>
         </section>
+
+        {sections.map((section) => (
+          <section id={section.id} className={`ai-collection ai-collection-${section.tone}`} key={section.id}>
+            <div className="container">
+              <header className="ai-collection-header">
+                <div>
+                  <span>{section.eyebrow}</span>
+                  <h2>{section.title}</h2>
+                </div>
+                <p>{section.description}</p>
+              </header>
+              <div className="ai-content-grid">
+                {section.items.map((item) => <AIContentCard item={item} key={item.id} />)}
+              </div>
+              {section.items.length > 3 && <p className="ai-scroll-hint">← 가로로 스크롤해 더 보기 →</p>}
+            </div>
+          </section>
+        ))}
       </main>
 
-      {/* Footer */}
       <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-social">
-              <a href="#" onClick={handleEmailClick} aria-label="Email">
-                Email
-              </a>
-              <a href="https://github.com/zi-young?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                GitHub
-              </a>
-              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
-                Blog
-              </a>
-            </div>
-            <p>© 2026 Portfolio. All rights reserved.</p>
+        <div className="container footer-content">
+          <div className="footer-social">
+            <a href="#" onClick={handleEmailClick}>Email</a>
+            <a href="https://github.com/zi-young?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer">Blog</a>
           </div>
+          <p>© 2026 Portfolio. All rights reserved.</p>
         </div>
       </footer>
     </div>
