@@ -1,6 +1,7 @@
 "use client"
 
 import { use } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { aiContentItems } from "../../../data/works"
 
@@ -85,9 +86,12 @@ export default function AIProjectDetailPage({ params }: { params: Promise<{ id: 
             )}
             {project.gallery?.map((image, index) => (
               <figure key={image} className={index === 0 ? "ai-detail-gallery-featured" : undefined}>
-                <img
-                  src={image}
+                <Image
+                  src={encodeURI(image)}
                   alt={`${project.title} 상세 이미지 ${index + 1}`}
+                  fill
+                  sizes={project.galleryLayout === "duo" ? "(max-width: 480px) 100vw, 50vw" : "(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"}
+                  quality={80}
                   loading={index === 0 ? "eager" : "lazy"}
                 />
               </figure>

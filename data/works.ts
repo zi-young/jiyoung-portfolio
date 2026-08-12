@@ -7,7 +7,7 @@ export interface AIContentItem {
   video?: string
   gallery?: string[]
   galleryVideos?: Array<{ src: string; poster?: string }>
-  galleryLayout?: "wide" | "portrait" | "mixed" | "square" | "uniform"
+  galleryLayout?: "wide" | "portrait" | "mixed" | "square" | "uniform" | "duo"
   title: string
   subtitle: string
   story: string
@@ -136,6 +136,23 @@ export const typoLabItems: AIContentItem[] = [
     ],
     promptExample:
       "PULPE chrome balloon typography, glossy lip-and-cheek texture, fresh blue sky and soft moss landscape, playful high-end beauty campaign, tactile 3D lettering",
+  },
+  {
+    id: "melting-summer",
+    section: "typo",
+    image:
+      "/AI_contents/section_B/melting_summer/u2758715917_woman_with_wet_wavy_hair_upper_body_looking_over_sh_887e284d-af02-4d9f-9f24-e77ef8733dfe.png",
+    gallery: [
+      "/AI_contents/section_B/melting_summer/u2758715917_woman_with_wet_wavy_hair_upper_body_looking_over_sh_887e284d-af02-4d9f-9f24-e77ef8733dfe.png",
+      "/AI_contents/section_B/melting_summer/u2758715917_woman_with_wet_wavy_hair_upper_body_looking_over_sh_bfd9ab68-56b7-419f-866c-71990ca2bc4e.png",
+    ],
+    galleryLayout: "duo",
+    title: "Melting Summer",
+    subtitle: "여름의 열기와 물이 맞닿는 찰나를 담은 AI 비주얼 시리즈",
+    story:
+      "Melting Summer는 한여름 뙤약볕 아래 물과 피부가 만나는 순간을 포착한 아트워크 시리즈입니다. 피부에 맺힌 물방울과 그 안에 담긴 빛의 굴절, 젖은 머리카락의 질감을 통해 여름 특유의 나른하고 촉촉한 감각을 표현했습니다. 화려한 연출보다는 한 사람이 더위를 통과하는 짧고 조용한 순간에 집중했습니다.",
+    category: "AI Visual Art (Conceptual Photography)",
+    tools: ["Midjourney"],
   },
   {
     id: "album-cover-reframed",

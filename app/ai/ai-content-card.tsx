@@ -1,13 +1,22 @@
 "use client"
 
+import { useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import type { AIContentItem } from "../../data/works"
 
 export function AIContentCard({ item }: { item: AIContentItem }) {
+  const [isPreviewing, setIsPreviewing] = useState(false)
+
   return (
-    <Link href={`/ai/${item.id}`} className="ai-content-card">
+    <Link
+      href={`/ai/${item.id}`}
+      className="ai-content-card"
+      onMouseEnter={() => setIsPreviewing(true)}
+      onMouseLeave={() => setIsPreviewing(false)}
+    >
       <div className="ai-content-card-media">
-        {item.video ? (
+        {item.video && isPreviewing ? (
           <video
             className="ai-content-card-visual"
             src={item.video}
@@ -15,15 +24,18 @@ export function AIContentCard({ item }: { item: AIContentItem }) {
             muted
             loop
             playsInline
-            preload="metadata"
-            onMouseEnter={(event) => void event.currentTarget.play()}
-            onMouseLeave={(event) => {
-              event.currentTarget.pause()
-              event.currentTarget.currentTime = 0
-            }}
+            preload="none"
+            autoPlay
           />
         ) : (
-          <img className="ai-content-card-visual" src={item.image} alt={item.title} />
+          <Image
+            className="ai-content-card-visual"
+            src={encodeURI(item.image)}
+            alt={item.title}
+            fill
+            sizes="(max-width: 768px) 82vw, 33vw"
+            quality={76}
+          />
         )}
         <span className="ai-content-card-action">View story <span aria-hidden="true">↗</span></span>
       </div>
