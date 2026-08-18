@@ -375,19 +375,19 @@ p { text-wrap: pretty; }
   display: flex;
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
-  padding-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-md);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
   scrollbar-color: var(--color-gray-400) transparent;
 }
 
-.ai-content-grid::-webkit-scrollbar { height: 5px; }
+.ai-content-grid::-webkit-scrollbar { height: 8px; }
 .ai-content-grid::-webkit-scrollbar-thumb { border-radius: 999px; background: var(--color-gray-400); }
-.ai-content-grid::-webkit-scrollbar-track { background: transparent; }
+.ai-content-grid::-webkit-scrollbar-track { border-radius: 999px; background: rgba(23, 23, 23, 0.08); }
 
 .ai-content-card {
-  flex: 0 0 calc((100% - (var(--spacing-lg) * 2)) / 3);
+  flex: 0 0 min(420px, 38%);
   min-width: 0;
   color: inherit;
   text-decoration: none;

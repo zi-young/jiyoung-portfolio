@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { AIContentCard } from "./ai-content-card"
-import { aiPlaygroundItems, campaignFrameItems, typoLabItems } from "../../data/works"
+import { aiPlaygroundItems, brandFilmItems, campaignFrameItems, typoLabItems } from "../../data/works"
 
 const sections = [
   {
@@ -11,7 +11,11 @@ const sections = [
     title: "Brand Studio",
     description: "브랜드 컨셉부터 패키지와 캠페인 비주얼까지 확장한 AI 기반 BX 디자인",
     tone: "campaign",
-    items: campaignFrameItems,
+    items: [
+      ...campaignFrameItems.slice(0, 2),
+      ...brandFilmItems,
+      ...campaignFrameItems.slice(2),
+    ],
   },
   {
     id: "visual-lab",
@@ -72,7 +76,7 @@ export default function AIPage() {
               <div className="ai-content-grid">
                 {section.items.map((item) => <AIContentCard item={item} key={item.id} />)}
               </div>
-              {section.items.length > 3 && <p className="ai-scroll-hint">← 가로로 스크롤해 더 보기 →</p>}
+              <p className="ai-scroll-hint">← 가로로 스크롤해 더 보기 →</p>
             </div>
           </section>
         ))}

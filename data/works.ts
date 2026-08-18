@@ -1,4 +1,4 @@
-export type AIContentSection = "campaign" | "typo" | "playground"
+export type AIContentSection = "campaign" | "typo" | "playground" | "brand-film"
 
 export interface AIContentItem {
   id: string
@@ -229,8 +229,49 @@ export const aiPlaygroundItems: AIContentItem[] = [
   },
 ]
 
+export const brandFilmItems: AIContentItem[] = [
+  {
+    id: "glace-eyewear",
+    section: "brand-film",
+    image: "/AI_contents/section_D/u2758715917_young_East_Asian_woman_long_straight_black_hair_p_c486ab50-ca32-4dc2-ae02-8a12c686320a_0.png",
+    video: "/AI_contents/section_D/Woman_puts_on_glasses_202608181107.mp4",
+    gallery: [
+      "/AI_contents/section_D/Gemini_Generated_Image_zcvh0lzcvh0lzcvh.png",
+      "/AI_contents/section_D/u2758715917_young_East_Asian_woman_long_straight_black_hair_p_c486ab50-ca32-4dc2-ae02-8a12c686320a_0.png",
+      "/AI_contents/section_D/Woman_looking_up_at_camera_202608181108.jpeg",
+      "/AI_contents/section_D/Young_woman_peeking_through_blinds_202608181112.jpeg",
+      "/AI_contents/section_D/Woman_wearing_jacket_and_shirt_202608181110.jpeg",
+      "/AI_contents/section_D/Woman_holding_glasses_portrait_2K_202608181112.jpeg",
+      "/AI_contents/section_D/Woman_looking_down_thoughtfully_2K_202608181113.jpeg",
+    ],
+    galleryVideos: [
+      {
+        src: "/AI_contents/section_D/Ice_melting_revealing_eyeglasses_202608181107.mp4",
+        poster: "/AI_contents/section_D/Eyeglasses_encased_in_melting_ice_202608141703.jpeg",
+      },
+    ],
+    galleryLayout: "uniform",
+    title: "GLACÉ EYEWEAR — AI 브랜드 캠페인",
+    subtitle: "얼음이 녹으며 드러나는 투명함, 시야를 가리지 않는 안경",
+    story:
+      "GLACÉ는 프랑스어로 ‘얼어붙은, 유약을 입힌’이라는 뜻을 지닌 아이웨어 브랜드입니다. 안경이 얼음 속에 잠겨 있다가 서서히 녹아 형태를 드러내는 이미지처럼, GLACÉ의 무테 프레임은 존재를 주장하지 않고 오직 시선만을 선명하게 남깁니다.\n\n색이 없는 투명함, 뿔테도 컬러도 없는 절제된 라인을 통해 ‘군더더기 없는 시야’를 표현했습니다. 얼음빛 그레이 블루와 무채색의 클리어 톤, 물방울과 얼음 결정, 유리의 굴절을 주요 비주얼 언어로 삼아 차갑지만 관능적이고 미니멀하면서도 이질적인 클리니컬 뷰티 무드를 완성했습니다.\n\n클린 뷰티와 미니멀 패션을 선호하며 안경을 얼굴을 가리는 도구가 아닌 ‘얼굴의 투명한 일부’로 받아들이는 20–30대를 타깃으로 설정했습니다.",
+    category: "Eyewear BX & AI Brand Film",
+    role: ["브랜드 컨셉 기획", "BX 디자인", "캠페인 비주얼 아트 디렉션", "AI 브랜드 필름 제작"],
+    tools: ["Midjourney", "Gemini", "Google Flow", "Photoshop"],
+    process: [
+      "투명함과 얼음의 물성을 중심으로 브랜드 컨셉 설계",
+      "그레이 블루와 무채색 기반의 비주얼 톤앤매너 구성",
+      "무테 프레임과 인물 중심의 캠페인 이미지 제작",
+      "얼음이 녹고 안경이 드러나는 브랜드 필름 시퀀스 제작",
+    ],
+    promptExample:
+      "Minimal rimless eyewear campaign, translucent ice melting around clear glasses, cool gray-blue palette, water droplets and glass refraction, sensual clinical beauty, clean editorial photography",
+  },
+]
+
 export const aiContentItems = [
   ...campaignFrameItems,
   ...typoLabItems,
   ...aiPlaygroundItems,
+  ...brandFilmItems,
 ]

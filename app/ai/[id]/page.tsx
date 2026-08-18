@@ -18,6 +18,7 @@ export default function AIProjectDetailPage({ params }: { params: Promise<{ id: 
     campaign: "AI Visual Campaign",
     typo: "Typography Design",
     playground: "AI Content Experiment",
+    "brand-film": "AI Brand Film",
   }[project.section]
 
   return (
