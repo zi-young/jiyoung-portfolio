@@ -224,7 +224,7 @@ export default function PublishingDetailPage({
             </li>
             <li>
               <Link href="/publishing" className="nav-link-active">
-                Publishing
+                Web·Publishing
               </Link>
             </li>
           </ul>

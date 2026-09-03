@@ -101,11 +101,8 @@ export default function PublishingPage() {
             </li>
             <li>
               <Link href="/publishing" className="nav-link-active">
-                Publishing
+                Web·Publishing
               </Link>
-            </li>
-            <li>
-              <Link href="/ai">AI Contents</Link>
             </li>
           </ul>
         </nav>
