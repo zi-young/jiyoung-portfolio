@@ -231,6 +231,28 @@ export const aiPlaygroundItems: AIContentItem[] = [
 
 export const brandFilmItems: AIContentItem[] = [
   {
+    id: "superstar-balletcore-campaign",
+    section: "brand-film",
+    image: "/AI_contents/section_E/모델5.jpg",
+    video: "/AI_contents/section_E/영상_최종.mp4",
+    gallery: [
+      "/AI_contents/section_E/모델5.jpg",
+      "/AI_contents/section_E/모델컷1.jpg",
+      "/AI_contents/section_E/모델컷2.jpg",
+      "/AI_contents/section_E/모델컷3.jpg",
+      "/AI_contents/section_E/연출컷1.jpg",
+      "/AI_contents/section_E/연출컷2.jpg",
+    ],
+
+    galleryLayout: "uniform",
+    title: "Superstar Balletcore Campaign",
+    subtitle: "턴할 때마다 바뀌는 아디다스 슈퍼스타의 발레코어 세계관",
+    story:
+      "Superstar Balletcore Campaign은 아디다스 슈퍼스타를 몽환적인 화원 속에서 재해석한 개인 캠페인 컨셉입니다. 안개 낀 대형 꽃밭 사이로 달리는 모델의 움직임에 따라 신발 컬러웨이가 전환되는 연출을 통해, '자연과 스니커즈가 공존하는 초현실적 순간'이라는 무드를 담았습니다.",
+    category: "슈즈 (아디다스 슈퍼스타 4종 컬러웨이 룩북·캠페인 필름)",
+    tools: ["Midjourney", "Veo3", "Photoshop"],
+  },
+  {
     id: "glace-eyewear",
     section: "brand-film",
     image: "/AI_contents/section_D/u2758715917_young_East_Asian_woman_long_straight_black_hair_p_c486ab50-ca32-4dc2-ae02-8a12c686320a_0.png",
