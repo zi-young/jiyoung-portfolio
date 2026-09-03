@@ -1,82 +1,39 @@
-"use client"
-
 import Link from "next/link"
 
 export default function HomePage() {
-  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    navigator.clipboard.writeText("jypark912@naver.com")
-    alert("이메일이 복사되었습니다: jypark912@naver.com")
-  }
+  return <div className="reskin-home">
+    <header className="reskin-header">
+      <nav className="reskin-container" aria-label="Global navigation">
+        <Link href="/" className="reskin-logo">ZIYOUNG.</Link>
+        <ul className="reskin-gnb">
+          <li><Link href="/design">Design</Link></li>
+          <li><Link href="/publishing">Web·Publishing</Link></li>
+        </ul>
+      </nav>
+    </header>
 
-  return (
-    <div>
-      {/* Header */}
-      <header className="header">
-        <nav className="container">
-          <Link href="/" className="logo">
-            Portfolio
-          </Link>
-          <ul className="nav-links">
-            <li>
-              <Link href="/design">Design</Link>
-            </li>
-            <li>
-              <Link href="/publishing">Publishing</Link>
-            </li>
-            <li>
-              <Link href="/ai">AI Contents</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      {/* Hero Section */}
-      <main className="main">
-        <section className="hero">
-          <div className="container">
-            <div className="hero-content">
-              <h1>
-                Design, Develop
-                <br />
-                Create.
-              </h1>
-              <p>디자인부터 구현까지, 작업의 전 과정을 담았습니다.</p>
-              <div className="hero-buttons">
-                <Link href="/design" className="button button-primary">
-                  Design
-                </Link>
-                <Link href="/publishing" className="button button-outline">
-                  Publishing
-                </Link>
-                <Link href="/ai" className="button button-outline">
-                  AI Contents
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-social">
-              <a href="#" onClick={handleEmailClick} aria-label="Email">
-                Email
-              </a>
-              <a href="https://github.com/zi-young" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                GitHub
-              </a>
-              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
-                Blog
-              </a>
-            </div>
-            <p>© 2026 Portfolio. All rights reserved.</p>
-          </div>
+    <main className="reskin-main">
+      <section className="reskin-hero" aria-labelledby="hero-title">
+        <div className="reskin-container reskin-hero-content">
+          <h1 id="hero-title">Design, Develop,<br /><em>Create.</em></h1>
+          <p>패션·뷰티 도메인 위에 AI와 코드를 더하는 디자이너입니다.<br />브랜드의 본질을 시각화하고, 실제 경험으로 구현합니다.</p>
+          <nav className="reskin-category-nav" aria-label="Portfolio categories">
+            <Link href="/design">Design</Link>
+            <Link href="/publishing">Web·Publishing</Link>
+          </nav>
         </div>
-      </footer>
-    </div>
-  )
+      </section>
+    </main>
+
+    <footer className="reskin-footer">
+      <div className="reskin-container">
+        <nav className="reskin-footer-links" aria-label="Footer links">
+          <a href="mailto:jypark912@naver.com">Email</a>
+          <a href="https://github.com/zi-young" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer">Blog</a>
+        </nav>
+        <p>© 2026 ZIYOUNG PARK</p>
+      </div>
+    </footer>
+  </div>
 }

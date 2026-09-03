@@ -76,7 +76,7 @@ export default function WeddingVideoDetailPage({ params }: { params: Promise<{ i
               </Link>
             </li>
             <li>
-              <Link href="/publishing">Publishing</Link>
+              <Link href="/publishing">Web·Publishing</Link>
             </li>
           </ul>
         </nav>

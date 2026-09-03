@@ -130,7 +130,7 @@ export default function GraphicDetailPage({ params }: { params: Promise<{ id: st
               </Link>
             </li>
             <li>
-              <Link href="/publishing">Publishing</Link>
+              <Link href="/publishing">Web·Publishing</Link>
             </li>
           </ul>
         </nav>

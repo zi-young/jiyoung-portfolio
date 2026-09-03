@@ -1,271 +1,69 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
+import { AIContentCard } from "../ai/ai-content-card"
+import { brandFilmItems, campaignFrameItems, typoLabItems } from "../../data/works"
 
-const weddingVideos = [
+const sections = [
   {
-    id: 1,
-    title: "Romantic Wedding Moving Poster",
-    description: "사진과 그래픽을 활용해 신랑신부의 분위기를 감성적으로 표현한 무빙포스터 식전영상",
-    category: "Wedding Film (3분)",
-    image: "/videos/video_1.jpg",
-  },
-  {
-    id: 2,
-    title: "Modern Wedding Video",
-    description: "짧은 영상과 이미지의 조합으로 모던하면서 감각적인 분위기의 식전영상",
-    category: "Wedding Film (1분 30초 / 1절)",
-    image: "/videos/video_2.jpg",
-  },
-  {
-    id: 3,
-    title: "Minimal Wedding Looping Video",
-    description: "잔잔한 스타일로 1분이내 영상을 반복재생하기 좋은 식전영상입니다.",
-    category: "Wedding Film",
-    image: "/videos/video_3.jpg",
+    id: "brand-campaign",
+    eyebrow: "01 / BRAND & CAMPAIGN",
+    title: "Brand & Campaign",
+    description: "브랜드 컨셉부터 패키지, 캠페인 비주얼과 그래픽 시스템까지 확장한 디자인",
+    items: [...campaignFrameItems, ...brandFilmItems, ...typoLabItems],
   },
 ]
 
-// 리터칭 projects
-const retouchProjects = [
+const practicalSections = [
   {
-    id: 1,
-    title: "Wedding Retouching",
-    description: "웨딩사진 보정 - 자연스러운 보정과 피부·드레스 디테일 강화",
-    category: "Wedding Retouch",
-    image: "/retouching/wedding1.jpg",
-    isReady: false,
+    id: "ecommerce-sns",
+    eyebrow: "02 / E-COMMERCE & SNS",
+    title: "E-commerce & SNS",
+    description: "제품과 메시지를 목적에 맞게 정리하고, 다양한 디지털 콘텐츠로 확장한 작업",
+    items: [
+      { href: "/design/graphic/3", image: "/fashion.jpg", title: "Fashion Detail Page", subtitle: "의류 쇼핑몰 상세페이지 디자인", tools: ["Photoshop", "Illustrator"] },
+      { href: "/design/graphic/1", image: "/monkeysoft-recruitment-notice.jpg", title: "Recruitment Content", subtitle: "정보를 시각적으로 구조화한 디지털 콘텐츠", tools: ["Content Design", "Photoshop"] },
+    ],
   },
   {
-    id: 2,
-    title: "Portrait Retouching",
-    description: "인물 보정 - 자연스러운 피부 톤 및 디테일 강화",
-    category: "Beauty Retouch",
-    image: "/retouching/profile1.png",
-  },
-  {
-    id: 3,
-    title: "Fashion Editorial",
-    description: "패션 에디토리얼 보정 - 색감 보정 및 몸매라인 강조",
-    category: "Fashion",
-    image: "/retouching/body1.PNG",
+    id: "visual-editing",
+    eyebrow: "03 / VISUAL EDITING",
+    title: "Visual Editing",
+    description: "인물과 바디 리터칭, 색감 보정과 합성으로 이미지의 완성도를 높인 작업",
+    items: [
+      { href: "/design/retouch/1", image: "/retouching/profile1.png", title: "Portrait & Body Retouching", subtitle: "인물·바디 리터칭 및 사진 편집", tools: ["Photoshop", "Retouching"] },
+      { href: "/design/retouch/1", image: "/wedding1_after.jpg", title: "Wedding Photo Editing", subtitle: "웨딩 사진 색감 및 분위기 보정", tools: ["Photoshop", "Color Grading"] },
+    ],
   },
 ]
 
-// 디자인영역 projects
-const designProjects = [
-  {
-    id: 1,
-    title: "MonkeySoft 채용공고 및 회사소개서 디자인",
-    description: "미리캔버스를 이용한 템플릿 활용 디자인으로\n기업의 전문성에 어울리는 디자인으로 각종 작업을 하였습니다.",
-    category: "Content Design",
-    image: "/monkeysoft-recruitment-notice.jpg",
-    images: [
-      "/monkeysoft-recruitment-notice.jpg",
-      "/thingsMiner_소개서- 복사본.jpg"
-    ]
-  },
-  {
-    id: 2,
-    title: "ThingsMiner Brand Identity Design",
-    description: "Figma Make AI를 활용하여 IoT 모니터링 솔루션 'ThingsMiner'의 브랜드 로고와 아이콘 시스템을 구축했습니다.",
-    category: "Branding",
-    image: "/thingsminer-icon.png",
-  },
-  {
-    id: 3,
-    title: "Album, Poster & Fashion Detail Page Design",
-    description:"앨범 커버와 프로모션 포스터,\n의류 쇼핑몰 상세페이지 디자인 작업입니다.",
-    category: "Graphic Design · Visual Branding",
-    image: "/album-poster.jpg",
-  },
-]
+function PracticalCard({ item }: { item: (typeof practicalSections)[number]["items"][number] }) {
+  return <Link href={item.href} className="ai-content-card practical-card">
+    <div className="ai-content-card-media">
+      <img className="ai-content-card-visual" src={item.image} alt={item.title} />
+      <span className="ai-content-card-action">View work <span aria-hidden="true">↗</span></span>
+    </div>
+    <div className="ai-content-card-body">
+      <h3>{item.title}</h3>
+      <p>{item.subtitle}</p>
+      <ul className="ai-tool-list" aria-label="사용 분야">
+        {item.tools.map((tool) => <li key={tool}>{tool}</li>)}
+      </ul>
+    </div>
+  </Link>
+}
 
 export default function DesignPage() {
-  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    navigator.clipboard.writeText("jypark912@naver.com")
-    alert("이메일이 복사되었습니다: jypark912@naver.com")
-  }
-
-  return (
-    <div className="page-design">
-      {/* Header */}
-      <header className="header">
-        <nav className="container">
-          <Link href="/" className="logo">
-            Portfolio
-          </Link>
-          <ul className="nav-links">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/design" className="nav-link-active">
-                Design
-              </Link>
-            </li>
-            <li>
-              <Link href="/publishing">Publishing</Link>
-            </li>
-            <li>
-              <Link href="/ai">AI Contents</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      {/* Main Content */}
-      <main className="main">
-        <section className="section">
-          <div className="container">
-            <div className="page-header">
-              <h1 className="page-title">Design</h1>
-              <p className="page-description">식전영상, 리터칭, 그래픽 디자인 등<br/>다양한 디자인 작업물을 확인하세요.</p>
-            </div>
-
-            {/* 리터칭 Section */}
-            <div className="design-section">
-              <h2 className="section-subtitle">Photo Retouching</h2>
-              <div className="project-grid">
-                {retouchProjects.map((project) => {
-                  const isProjectReady = project.isReady !== false
-
-                  return (
-                    <Link
-                      key={project.id}
-                      href={`/design/retouch/${project.id}`}
-                      className="project-card project-card-design"
-                    >
-                      <div className="project-card-image-wrapper">
-                        {isProjectReady ? (
-                          <img
-                            src={project.image || "/placeholder.svg"}
-                            alt={project.title}
-                            className="project-card-image"
-                          />
-                        ) : (
-                          <div
-                            className="project-card-image"
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              background: "linear-gradient(135deg, #f7f4f0 0%, #ece7e2 100%)",
-                              border: "1px solid rgba(0, 0, 0, 0.08)",
-                              color: "#6f6258",
-                              fontSize: 22,
-                              fontWeight: 700,
-                            }}
-                          >
-                            준비중
-                          </div>
-                        )}
-                        <div className="project-card-overlay">
-                          <div className="project-card-overlay-content">
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="project-card-content">
-                        <span className="project-card-category">{project.category}</span>
-                        <h3 className="project-card-title">{project.title}</h3>
-                        <p className="project-card-description">{project.description}</p>
-                      </div>
-                    </Link>
-                  )
-                })}
-              </div>
-            </div>
-
-            {/* 디자인영역 Section */}
-            <div className="design-section">
-              <h2 className="section-subtitle">Graphic Design</h2>
-              <div className="project-grid">
-                {designProjects.map((project) => (
-                  <Link
-                    key={project.id}
-                    href={`/design/graphic/${project.id}`}
-                    className="project-card project-card-design"
-                  >
-                    <div className="project-card-image-wrapper">
-                      <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        className="project-card-image"
-                      />
-                      <div className="project-card-overlay">
-                        <div className="project-card-overlay-content">
-                          <h3>{project.title}</h3>
-                          <p>{project.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-card-content">
-                      <span className="project-card-category">{project.category}</span>
-                      <h3 className="project-card-title">{project.title}</h3>
-                      <p className="project-card-description">{project.description}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            {/* 식전영상 Section */}
-            <div className="design-section">
-              <h2 className="section-subtitle">Wedding Films</h2>
-              <div className="project-grid">
-                {weddingVideos.map((project) => (
-                  <Link
-                    key={project.id}
-                    href={`/design/wedding-video/${project.id}`}
-                    className="project-card project-card-design"
-                  >
-                    <div className="project-card-image-wrapper">
-                      <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        className="project-card-image"
-                      />
-                      <div className="project-card-overlay">
-                        <div className="project-card-overlay-content">
-                          <h3>{project.title}</h3>
-                          <p>{project.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-card-content">
-                      <span className="project-card-category">{project.category}</span>
-                      <h3 className="project-card-title">{project.title}</h3>
-                      <p className="project-card-description">{project.description}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-social">
-              <a href="#" onClick={handleEmailClick} aria-label="Email">
-                Email
-              </a>
-              <a href="https://github.com/zi-young?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                GitHub
-              </a>
-              <a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer" aria-label="Blog">
-                Blog
-              </a>
-            </div>
-            <p>© 2026 Portfolio. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  )
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({})
+  const handleEmailClick = (event: React.MouseEvent<HTMLAnchorElement>) => { event.preventDefault(); void navigator.clipboard.writeText("jypark912@naver.com"); alert("이메일이 복사되었습니다: jypark912@naver.com") }
+  return <div className="page-design page-ai">
+    <header className="header"><nav className="container"><Link href="/" className="logo">Portfolio</Link><ul className="nav-links"><li><Link href="/">Home</Link></li><li><Link href="/design" className="nav-link-active">Design</Link></li><li><Link href="/publishing">Web·Publishing</Link></li></ul></nav></header>
+    <main className="main">
+      <section className="ai-hero container"><span>DESIGN PORTFOLIO · SELECTED AI WORKS · 2026</span><h1>Design</h1><p>아이디어를 이미지로, 이미지를 브랜드의 시각 언어로.<br />AI와 디자인을 함께 사용해 만든 콘텐츠 아카이브입니다.</p></section>
+      {sections.map((section) => { const isExpanded = expandedSections[section.id]; const items = isExpanded ? section.items : section.items.slice(0, 3); return <section id={section.id} className="ai-collection ai-collection-campaign" key={section.id}><div className="container"><header className="ai-collection-header"><div><span>{section.eyebrow}</span><h2>{section.title}</h2></div><p>{section.description}</p></header><div className="ai-content-grid">{items.map((item) => <AIContentCard item={item} key={item.id} />)}</div>{section.items.length > 3 && <button className="ai-more-button" type="button" onClick={() => setExpandedSections((current) => ({ ...current, [section.id]: !isExpanded }))}>{isExpanded ? "접기" : "더보기"}<span aria-hidden="true">{isExpanded ? "↑" : "↓"}</span></button>}</div></section> })}
+      {practicalSections.map((section, index) => <section id={section.id} className={`ai-collection ${index % 2 === 0 ? "ai-collection-typo" : "ai-collection-playground"}`} key={section.id}><div className="container"><header className="ai-collection-header"><div><span>{section.eyebrow}</span><h2>{section.title}</h2></div><p>{section.description}</p></header><div className="ai-content-grid">{section.items.map((item) => <PracticalCard item={item} key={item.title} />)}</div></div></section>)}
+    </main>
+    <footer className="footer"><div className="container footer-content"><div className="footer-social"><a href="#" onClick={handleEmailClick}>Email</a><a href="https://github.com/zi-young?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://blog.naver.com/ruruha_" target="_blank" rel="noopener noreferrer">Blog</a></div><p>© 2026 Portfolio. All rights reserved.</p></div></footer>
+  </div>
 }

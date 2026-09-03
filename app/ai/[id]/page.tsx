@@ -29,7 +29,7 @@ export default function AIProjectDetailPage({ params }: { params: Promise<{ id: 
           <ul className="nav-links">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/design">Design</Link></li>
-            <li><Link href="/publishing">Publishing</Link></li>
+            <li><Link href="/publishing">Web·Publishing</Link></li>
             <li><Link href="/ai" className="nav-link-active">AI Contents</Link></li>
           </ul>
         </nav>
