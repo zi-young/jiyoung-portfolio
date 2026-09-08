@@ -6,7 +6,7 @@ export default function HomePage() {
       <nav className="reskin-container" aria-label="Global navigation">
         <Link href="/" className="reskin-logo">ZIYOUNG.</Link>
         <ul className="reskin-gnb">
-          <li><Link href="/design">Design</Link></li>
+          <li><Link href="/design">BX & Content Design</Link></li>
           <li><Link href="/publishing">Web·Publishing</Link></li>
         </ul>
       </nav>
@@ -15,10 +15,10 @@ export default function HomePage() {
     <main className="reskin-main">
       <section className="reskin-hero" aria-labelledby="hero-title">
         <div className="reskin-container reskin-hero-content">
-          <h1 id="hero-title">Design, Develop,<br /><em>Create.</em></h1>
-          <p>패션·뷰티 도메인 위에 AI와 코드를 더하는 디자이너입니다.<br />브랜드의 본질을 시각화하고, 실제 경험으로 구현합니다.</p>
+          <h1 id="hero-title">Design, AI,<br /><em>Create.</em></h1>
+          <p>AI와 데이터를 활용해 타깃 고객의 브랜드 경험(BX)을 설계하는 디자이너입니다.<br />시각적 구현을 넘어 실제 비즈니스 유입을 이끄는 콘텐츠를 만듭니다.</p>
           <nav className="reskin-category-nav" aria-label="Portfolio categories">
-            <Link href="/design">Design</Link>
+            <Link href="/design">BX & Content Design</Link>
             <Link href="/publishing">Web·Publishing</Link>
           </nav>
         </div>

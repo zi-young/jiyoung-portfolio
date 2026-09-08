@@ -349,9 +349,10 @@ p { text-wrap: pretty; }
 }
 
 .ai-collection { padding: clamp(4.5rem, 9vw, 8rem) 0; }
-.ai-collection-campaign { background: #f5f3ef; }
+.ai-collection-campaign,
+.ai-collection-visual { background: #f1f5ef; }
+.ai-collection-playground,
 .ai-collection-typo { background: var(--color-white); }
-.ai-collection-playground { background: #f1f5ef; }
 
 .ai-collection-header {
   display: grid;

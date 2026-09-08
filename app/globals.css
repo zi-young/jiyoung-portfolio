@@ -178,3 +178,68 @@
 .ai-more-button:hover { background:#171717; color:#fff; }
 .ai-more-button span { font-size:16px; line-height:1; }
 @media (max-width:700px) { .page-design .ai-content-grid { grid-template-columns:1fr; gap:34px; } .ai-more-button { margin-top:40px; } }
+
+/* B2B channel growth: alternating case-study rows with replaceable image placeholders. */
+.b2b-growth-section { background:#f1f5ef; padding:clamp(4.5rem, 9vw, 8rem) 0; }
+.b2b-growth-header { padding-bottom:var(--spacing-lg); }
+.b2b-growth-header h2 { max-width:680px; }
+.b2b-growth-header p { color:var(--color-gray-600); }
+.b2b-carousel { position:relative; overflow:hidden; margin-top:var(--spacing-xl); touch-action:pan-y; }
+.b2b-carousel-track { display:flex; transition:transform .55s cubic-bezier(.22,.61,.36,1); }
+.b2b-feature-slide { display:grid; flex:0 0 100%; grid-template-columns:minmax(0, 1.15fr) minmax(280px, .85fr); align-items:center; gap:clamp(2.5rem, 8vw, 8rem); min-height:clamp(460px, 52vw, 620px); padding:0 5rem 3.5rem 0; }
+.b2b-feature-visual { min-width:0; width:100%; }
+.b2b-feature-visual img,.b2b-feature-placeholder { display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:var(--border-radius); }
+.b2b-feature-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--spacing-sm); }
+.b2b-feature-gallery img { aspect-ratio:4 / 5; background:#fff; object-fit:cover; }
+.b2b-feature-image-wrap { position:relative; }
+.b2b-feature-image-wrap.has-evidence img { aspect-ratio:auto; object-fit:contain; background:#fff; }
+.b2b-ga4-highlights { position:absolute; inset:0; pointer-events:none; }
+.b2b-ga4-highlight { position:absolute; left:3.5%; right:3%; border:2px solid #db2777; border-radius:6px; box-shadow:0 0 0 2px rgba(255,255,255,.7); }
+.b2b-ga4-highlight-cafe { top:68%; height:4.8%; }
+.b2b-ga4-highlight-naver { top:79.8%; height:19.4%; }
+.b2b-feature-placeholder { position:relative; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; border:1px solid #d8d8d2; background:linear-gradient(135deg,#ecece7,#fafaf8); padding:clamp(1rem, 2vw, 1.5rem); color:#777; }
+.b2b-placeholder-index { font:500 10px/1.4 "DM Mono",monospace; letter-spacing:.08em; }
+.b2b-placeholder-art { position:absolute; top:50%; left:50%; display:flex; align-items:flex-end; gap:clamp(.4rem, 1vw, .8rem); width:55%; height:45%; transform:translate(-50%,-50%); }
+.b2b-placeholder-art span { flex:1; min-height:25%; border:1px solid #aaa; background:rgba(255,255,255,.68); }
+.b2b-placeholder-art span:nth-child(2) { min-height:65%; background:#d8d8d0; }
+.b2b-placeholder-art span:nth-child(3) { min-height:45%; }
+.b2b-placeholder-label { position:relative; z-index:1; align-self:flex-end; border:1px solid #c5c5bd; background:rgba(255,255,255,.55); padding:.45rem .6rem; font-size:.72rem; }
+.b2b-feature-copy { max-width:440px; }
+.b2b-feature-number { color:#888; font:500 12px/1.4 "DM Mono",monospace; }
+.b2b-feature-copy h3 { margin-top:1rem; color:#171717; font-size:clamp(1.5rem, 3vw, 2.65rem); line-height:1.15; letter-spacing:-.045em; }
+.b2b-feature-copy p { margin-top:1rem; color:#666; font-size:clamp(.95rem, 1.4vw, 1.08rem); line-height:1.75; word-break:keep-all; }
+.b2b-feature-details { display:grid; gap:.7rem; margin-top:1.25rem; padding-left:1.1rem; color:#666; font-size:.88rem; line-height:1.7; word-break:keep-all; }
+.b2b-feature-details li::marker { color:#888; }
+.b2b-blog-visual-column { min-width:0; }
+.b2b-blog-visual { display:grid; grid-template-columns:1fr; align-items:start; gap:var(--spacing-sm); }
+.b2b-blog-main-image,.b2b-blog-overlay-image { display:block; width:100%; height:auto; border-radius:var(--border-radius); background:#fff; box-shadow:0 14px 34px rgba(23,23,23,.12); object-fit:contain; object-position:center; }
+.b2b-blog-overlay-image { border:0; box-shadow:0 14px 34px rgba(23,23,23,.12); }
+.b2b-blog-copy h3 { font-size:clamp(2rem, 4vw, 3.5rem); line-height:1.05; }
+.b2b-blog-copy > p { margin-top:1.25rem; }
+.b2b-blog-features { display:flex; flex-direction:column; gap:1.25rem; margin-top:2rem; list-style:none; }
+.b2b-blog-features li { display:flex; flex-direction:column; gap:.25rem; color:#666; font-size:.88rem; line-height:1.7; }
+.b2b-blog-features strong { color:#171717; font-size:.95rem; font-weight:700; }
+.b2b-blog-next { display:grid; width:42px; height:42px; place-items:center; margin:2rem 0 0 auto; border:1px solid #171717; border-radius:50%; background:transparent; color:#171717; font-size:1.15rem; cursor:pointer; transition:background .2s ease,color .2s ease; }
+.b2b-blog-next:hover { background:#171717; color:#fff; }
+.b2b-carousel-arrow { position:absolute; top:50%; z-index:2; display:grid; width:42px; height:42px; place-items:center; border:1px solid #c9cec7; border-radius:50%; background:rgba(241,245,239,.88); color:#171717; font-size:1.1rem; cursor:pointer; transform:translateY(-50%); transition:background .2s ease, color .2s ease; }
+.b2b-carousel-arrow:hover { background:#171717; color:#fff; }
+.b2b-carousel-arrow-prev { left:0; }
+.b2b-carousel-arrow-next { right:0; }
+.b2b-carousel-pagination { position:absolute; bottom:0; left:0; display:flex; gap:1.25rem; }
+.b2b-carousel-pagination button { border:0; border-bottom:1px solid transparent; background:transparent; padding:0 0 .35rem; color:#8a8f88; font:500 12px/1.4 "DM Mono",monospace; cursor:pointer; }
+.b2b-carousel-pagination button.is-active { border-color:#171717; color:#171717; }
+@media (max-width:700px) {
+  .b2b-growth-section { padding:4.5rem 0; }
+  .b2b-growth-header { padding-bottom:3rem; }
+  .b2b-growth-header h2 { font-size:clamp(2rem, 10vw, 3rem); }
+  .b2b-feature-slide { grid-template-columns:1fr; gap:1.5rem; min-height:0; }
+  .b2b-feature-visual img,.b2b-feature-placeholder { aspect-ratio:4 / 3; }
+  .b2b-feature-gallery { gap:.6rem; }
+  .b2b-carousel-arrow { top:34%; width:36px; height:36px; }
+  .b2b-carousel-arrow-prev { left:.5rem; }
+  .b2b-carousel-arrow-next { right:.5rem; }
+  .b2b-feature-copy h3 { margin-top:.7rem; }
+  .b2b-blog-slide { gap:2.5rem; }
+  .b2b-blog-visual { gap:.6rem; }
+  .b2b-blog-features { gap:1rem; margin-top:1.5rem; }
+}

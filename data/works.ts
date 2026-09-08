@@ -184,6 +184,18 @@ export const typoLabItems: AIContentItem[] = [
 
 export const aiPlaygroundItems: AIContentItem[] = [
   {
+    id: "monkeysoft-ai-film",
+    section: "playground",
+    image: "/AI_contents/monkeysoft-poster.jpg",
+    video: "/AI_contents/monkeysoft.mp4",
+    title: "MonkeySoft AI Brand Film",
+    subtitle: "개발자의 일상을 유쾌하게 풀어낸 AI 브랜드 영상",
+    story:
+      "개발자의 업무 공간과 MonkeySoft의 아이덴티티를 바탕으로 제작한 짧은 브랜드 영상입니다. 실제 공간의 분위기와 브랜드 컬러를 유지하면서, AI 영상 생성으로 자연스러운 움직임과 리듬을 더했습니다.",
+    tools: ["Gemini", "Veo"],
+    process: ["브랜드와 장면 컨셉 설정", "기준 이미지 제작", "AI 영상 생성 및 편집"],
+  },
+  {
     id: "1",
     section: "playground",
     image: "/AI_contents/haru.png",
