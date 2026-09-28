@@ -479,6 +479,104 @@ p { text-wrap: pretty; }
 .ai-external-link { display: table; margin: var(--spacing-xl) auto 0; }
 .ai-not-found { min-height: 70vh; display: grid; place-content: center; gap: var(--spacing-sm); text-align: center; }
 
+/* ROOCO case study: extends the existing editorial AI detail layout without introducing new UI primitives. */
+.rooco-detail .ai-detail-header { padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.rooco-project-type { margin-top: var(--spacing-md); color: var(--color-gray-600); font: 600 .72rem/1.5 "DM Mono", monospace; letter-spacing: .08em; }
+.rooco-project-meta { margin-top: .45rem; color: var(--color-gray-600); font: .75rem/1.5 "DM Mono", monospace; letter-spacing: .08em; }
+.rooco-intro-copy { max-width: 580px; color: var(--color-gray-600); line-height: 1.8; }
+.rooco-hero-media { margin: 0; overflow: hidden; border-radius: var(--border-radius); background: var(--color-gray-100); }
+.rooco-hero-media img { display: block; width: 100%; height: auto; }
+.rooco-section { padding: clamp(5rem, 10vw, 9rem) 0 0; }
+.rooco-section-heading { max-width: 760px; padding-bottom: var(--spacing-lg); border-bottom: 1px solid rgba(23,23,23,.18); }
+.rooco-section-heading > span { display: block; color: var(--color-gray-600); font: 600 .75rem/1.4 "DM Mono", monospace; letter-spacing: .14em; }
+.rooco-section-heading h2 { margin-top: var(--spacing-sm); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -.05em; }
+.rooco-section-heading p { margin-top: var(--spacing-md); max-width: 620px; color: var(--color-gray-600); line-height: 1.8; }
+.rooco-overview-content { display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,.72fr); gap: clamp(2rem, 8vw, 8rem); padding-top: var(--spacing-xl); }
+.rooco-copy p { max-width: 660px; color: var(--color-gray-600); line-height: 1.85; }
+.rooco-copy p + p { margin-top: var(--spacing-md); }
+.rooco-facts { border-top: 1px solid var(--color-gray-300); }
+.rooco-facts > div { display: grid; grid-template-columns: 7rem 1fr; gap: var(--spacing-sm); padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-gray-200); }
+.rooco-facts span, .rooco-comparison > div > span { color: var(--color-gray-600); font: 600 .7rem/1.4 "DM Mono", monospace; letter-spacing: .1em; }
+.rooco-facts p { color: var(--color-gray-600); font-size: var(--font-size-sm); line-height: 1.55; }
+.rooco-template-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--spacing-md); margin-top: var(--spacing-xl); }
+.rooco-template-grid figure, .rooco-output-grid figure { margin: 0; overflow: hidden; border-radius: var(--border-radius); background: var(--color-gray-100); }
+.rooco-template-grid img, .rooco-output-grid img { display: block; width: 100%; height: auto; }
+.rooco-label-list { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: var(--spacing-lg); list-style: none; }
+.rooco-label-list li { border: 1px solid var(--color-gray-300); border-radius: 999px; padding: .35rem .7rem; color: var(--color-gray-600); font-size: .72rem; }
+.rooco-workspace-section { padding-right: 0; padding-left: 0; }
+.rooco-workspace-figure { margin: var(--spacing-xl) 0 0; overflow: hidden; border-radius: var(--border-radius); background: var(--color-gray-100); }
+.rooco-workspace-figure img { display: block; width: 100%; height: auto; }
+.rooco-annotations { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+.rooco-annotations div { display: flex; gap: var(--spacing-sm); align-items: baseline; border-top: 1px solid var(--color-gray-300); padding-top: var(--spacing-sm); }
+.rooco-annotations span { color: var(--color-gray-600); font: .72rem/1.4 "DM Mono", monospace; }
+.rooco-annotations strong { font-size: .9rem; font-weight: 500; }
+.rooco-section-note { max-width: 660px; margin-top: var(--spacing-xl); color: var(--color-gray-600); line-height: 1.8; }
+.rooco-workflow { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: var(--spacing-sm); margin-top: var(--spacing-xl); }
+.rooco-workflow-step { position: relative; min-height: 175px; border-top: 1px solid var(--color-gray-400); padding: var(--spacing-sm) .25rem 0 0; }
+.rooco-workflow-step > span { display: block; color: var(--color-gray-600); font: .72rem/1.4 "DM Mono", monospace; }
+.rooco-workflow-step strong { display: block; margin-top: 1.1rem; font-size: .85rem; letter-spacing: -.01em; }
+.rooco-workflow-step p { margin-top: .5rem; color: var(--color-gray-600); font-size: .78rem; line-height: 1.55; }
+.rooco-workflow-step i { position: absolute; top: -0.65rem; right: -.4rem; color: var(--color-gray-600); font-style: normal; }
+.rooco-workflow-step.is-review { border-top: 2px solid #171717; }
+.rooco-workflow-step.is-review strong { color: #171717; }
+.rooco-comparison { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--spacing-md); margin-top: var(--spacing-xl); align-items: start; }
+.rooco-comparison > div > span { display: block; margin-bottom: var(--spacing-sm); }
+.rooco-comparison img { display: block; width: 100%; height: auto; border-radius: var(--border-radius); }
+.rooco-placeholder { display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 3 / 4; border: 1px dashed var(--color-gray-400); border-radius: var(--border-radius); background: linear-gradient(135deg,#f2f2ef,#fafaf8); padding: var(--spacing-md); color: var(--color-gray-600); }
+.rooco-placeholder span { font: .65rem/1.4 "DM Mono", monospace; letter-spacing: .08em; }
+.rooco-placeholder strong { font-size: .9rem; font-weight: 500; }
+.rooco-output-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: var(--spacing-md); margin-top: var(--spacing-xl); align-items: start; }
+.rooco-result { padding-bottom: var(--spacing-2xl); }
+.rooco-result-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: var(--spacing-md); margin-top: var(--spacing-xl); }
+.rooco-result-grid > div { border-top: 1px solid var(--color-gray-400); padding-top: var(--spacing-sm); }
+.rooco-result-grid strong { font: 600 .7rem/1.4 "DM Mono", monospace; letter-spacing: .1em; }
+.rooco-result-grid p { margin-top: .75rem; color: var(--color-gray-600); font-size: .9rem; line-height: 1.5; }
+.rooco-result-grid .is-review { border-top: 2px solid #171717; }
+
+@media (max-width: 768px) {
+  .rooco-overview-content { grid-template-columns: 1fr; gap: var(--spacing-xl); }
+  .rooco-template-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .rooco-workflow { grid-template-columns: 1fr; gap: 0; }
+  .rooco-workflow-step { min-height: 0; padding: var(--spacing-md) 2rem var(--spacing-md) 0; }
+  .rooco-workflow-step i { top: auto; right: 1rem; bottom: .9rem; transform: rotate(90deg); }
+  .rooco-workflow-step:last-child i { display: none; }
+  .rooco-output-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .rooco-result-grid { grid-template-columns: repeat(2,minmax(0,1fr)); row-gap: var(--spacing-lg); }
+}
+
+@media (max-width: 480px) {
+  .rooco-template-grid, .rooco-comparison, .rooco-output-grid { grid-template-columns: 1fr; }
+  .rooco-annotations, .rooco-result-grid { grid-template-columns: 1fr; }
+  .rooco-facts > div { grid-template-columns: 6rem 1fr; }
+}
+
+/* Compact ROOCO presentation: image-led and limited to four portfolio sections. */
+.rooco-detail .rooco-detail-header { padding-bottom: clamp(2rem, 4vw, 3.5rem); }
+.rooco-detail .rooco-hero-media { margin-top: 0; }
+.rooco-detail .rooco-section.rooco-compact-section { padding-top: clamp(3.5rem, 6vw, 5.5rem); }
+.rooco-detail .rooco-section-heading { max-width: none; }
+.rooco-detail .rooco-section-heading h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); }
+.rooco-selected-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-xl); align-items: start; }
+.rooco-selected-grid figure { margin: 0; overflow: hidden; border-radius: var(--border-radius); background: var(--color-gray-100); }
+.rooco-selected-grid img { display: block; width: 100%; height: auto; }
+.rooco-detail .rooco-workspace-figure { margin-top: var(--spacing-xl); }
+.rooco-detail .rooco-section-note { margin-top: var(--spacing-md); }
+.rooco-workflow-line { margin-top: var(--spacing-md); color: var(--color-gray-600); font: .72rem/1.6 "DM Mono", monospace; letter-spacing: .03em; }
+.rooco-workflow-line span { padding: 0 .55rem; color: var(--color-gray-400); }
+.rooco-detail .rooco-output-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: var(--spacing-xl); }
+.rooco-detail .rooco-result { padding-bottom: var(--spacing-xl); }
+
+@media (max-width: 768px) {
+  .rooco-selected-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rooco-detail .rooco-output-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .rooco-selected-grid, .rooco-detail .rooco-output-grid { grid-template-columns: 1fr; }
+  .rooco-workflow-line { line-height: 2; }
+  .rooco-workflow-line span { padding: 0 .2rem; }
+}
+
 @media (max-width: 768px) {
   .ai-collection-header { grid-template-columns: 1fr; gap: var(--spacing-sm); }
   .ai-content-card { flex-basis: min(82vw, 340px); }
