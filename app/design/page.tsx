@@ -23,12 +23,13 @@ const sections = [
 
 const webPromotionSection = {
   id: "web-promotion",
-  eyebrow: "01 / WEB & PROMOTION",
-  title: "Web & Promotion",
-  description: "패션 상세페이지를 중심으로 프로모션·이벤트 페이지와 웹 배너로 확장한 작업",
+  eyebrow: "01 / WEB & VISUAL",
+  title: "Web & Visual Design",
+  description: "E-commerce · Promotion · Image Retouching",
   items: [
     { href: "/design/rooco", image: roocoProject.heroImages[0], title: roocoProject.title, subtitle: "실제 외주 프로젝트 · 상세페이지 시스템 및 AI-assisted workflow", tools: ["E-commerce", "Figma", "AI Workflow"] },
     { href: "/design/graphic/3", image: "/fashion.jpg", title: "Fashion Detail Page", subtitle: "의류 쇼핑몰 상세페이지 및 프로모션 디자인", tools: ["Photoshop", "Illustrator"] },
+    { href: "/design/retouch/1", image: "/retouching/profile1.png", title: "Portrait Retouching", subtitle: "자연스러운 피부결과 얼굴 디테일을 살린 인물 보정", tools: ["Image Retouching"] },
   ],
 }
 

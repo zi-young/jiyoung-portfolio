@@ -7,29 +7,6 @@ import { useState } from "react"
 
 const sections = [
   {
-    title: "웨딩",
-    projects: [
-      {
-        title: "웨딩 인물보정 1",
-        image: "/retouchihng/wedding1.jpg",
-        isReady: false,
-        description: "웨딩 촬영에서 자연스러운 피부와 밝은 분위기를 강조한 보정.",
-      },
-      {
-        title: "웨딩 인물보정 2",
-        image: "/retouchihng/wedding2.jpg",
-        isReady: false,
-        description: "신부의 드레스와 메이크업을 돋보이게 하는 색감 보정.",
-      },
-      {
-        title: "웨딩 인물보정 3",
-        image: "/retouchihng/wedding3.jpg",
-        isReady: false,
-        description: "밝고 화사한 피부톤과 헤어 디테일 강조.",
-      },
-    ],
-  },
-  {
     title: "프로필사진",
     projects: [
       {
@@ -61,18 +38,6 @@ const sections = [
         title: "바디 보정 1",
         image: "/retouching/body1.PNG",
         description: "자연스러운 바지 핏 보정.",
-      },
-      {
-        title: "바디 보정 2",
-        image: "/retouchihng/body2.jpg",
-        isReady: false,
-        description: "근육과 실루엣을 자연스럽게 보정.",
-      },
-      {
-        title: "바디 보정 3",
-        image: "/retouchihng/body3.jpg",
-        isReady: false,
-        description: "피부톤과 바디 밸런스 보정.",
       },
     ],
   },
