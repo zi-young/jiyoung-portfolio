@@ -71,7 +71,7 @@ const outzyVideoItems: VideoContentItem[] = [
     tools: ["Premiere Pro"],
     modalTools: ["Premiere Pro", "CapCut"],
     image: "/04/posters/uniqlo-baggy.jpg",
-    video: "/04/유니클로 배기커브진 👖💙 #유니클로 #uniqlo #데일리룩코디 #배기커브진.mp4",
+    video: "/04/uniqlo-baggy.mp4",
   },
   {
     id: "uniqlo-jersey-barrel-leg-pants",
@@ -81,7 +81,7 @@ const outzyVideoItems: VideoContentItem[] = [
     tools: ["Premiere Pro"],
     modalTools: ["Premiere Pro", "CapCut"],
     image: "/04/posters/uniqlo-jersey.jpg",
-    video: "/04/유니클로 인기템 저지배럴레그팬츠 입어보기 👖 #유니클로 #저지배럴레그팬츠 #유니클로팬츠 #직장인룩 #ootdfashion   #데일리룩코디.mp4",
+    video: "/04/uniqlo-jersey.mp4",
   },
   {
     id: "zara-knit-look",
@@ -91,7 +91,7 @@ const outzyVideoItems: VideoContentItem[] = [
     tools: ["CapCut"],
     modalTools: ["CapCut"],
     image: "/04/posters/zara-knit.jpg",
-    video: "/04/zara 니트 입어보기 🧶.mp4",
+    video: "/04/zara-knit.mp4",
   },
 ]
 

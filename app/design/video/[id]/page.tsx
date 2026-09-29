@@ -7,17 +7,17 @@ const videos = {
   "uniqlo-baggy-curve-jeans": {
     title: "유니클로 배기커브진",
     subtitle: "Daily Outfit Content",
-    video: "/04/유니클로 배기커브진 👖💙 #유니클로 #uniqlo #데일리룩코디 #배기커브진.mp4",
+    video: "/04/uniqlo-baggy.mp4",
   },
   "uniqlo-jersey-barrel-leg-pants": {
     title: "유니클로 저지 배럴레그팬츠",
     subtitle: "Office Outfit / Daily Look Content",
-    video: "/04/유니클로 인기템 저지배럴레그팬츠 입어보기 👖 #유니클로 #저지배럴레그팬츠 #유니클로팬츠 #직장인룩 #ootdfashion   #데일리룩코디.mp4",
+    video: "/04/uniqlo-jersey.mp4",
   },
   "zara-knit-look": {
     title: "ZARA 니트 입어보기",
     subtitle: "Knitwear Outfit Content",
-    video: "/04/zara 니트 입어보기 🧶.mp4",
+    video: "/04/zara-knit.mp4",
   },
 } as const
 
