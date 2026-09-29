@@ -5,13 +5,13 @@ import Image from "next/image"
 import Link from "next/link"
 import type { AIContentItem } from "../../data/works"
 
-export function AIContentCard({ item }: { item: AIContentItem }) {
+export function AIContentCard({ item, className = "" }: { item: AIContentItem; className?: string }) {
   const [isPreviewing, setIsPreviewing] = useState(false)
 
   return (
     <Link
       href={`/ai/${item.id}`}
-      className="ai-content-card"
+      className={`ai-content-card ${className}`.trim()}
       onMouseEnter={() => setIsPreviewing(true)}
       onMouseLeave={() => setIsPreviewing(false)}
     >
