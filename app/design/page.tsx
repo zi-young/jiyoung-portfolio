@@ -25,9 +25,10 @@ const webPromotionSection = {
   id: "web-promotion",
   eyebrow: "01 / WEB & VISUAL",
   title: "Web & Visual Design",
-  description: "E-commerce · Promotion · Image Retouching",
+  description: "E-commerce · UI/UX · figma",
   items: [
     { href: "/design/rooco", image: roocoProject.heroImages[0], title: roocoProject.title, subtitle: "실제 외주 프로젝트 · 상세페이지 시스템 및 AI-assisted workflow", tools: ["E-commerce", "Figma", "AI Workflow"] },
+    { href: "/design/yogi", image: "/yogi/01-cover.webp", title: "YOGI — Yoga Sequence App", subtitle: "요가 자세를 탐색하고, 나만의 시퀀스를 구성해 수련까지 이어지는 모바일 UI/UX 프로젝트.", tools: ["UI/UX", "Figma", "AI 협업"] },
     { href: "/design/graphic/3", image: "/fashion.jpg", title: "Fashion Detail Page", subtitle: "의류 쇼핑몰 상세페이지 및 프로모션 디자인", tools: ["Photoshop", "Illustrator"] },
     { href: "/design/retouch/1", image: "/retouching/profile1.png", title: "Portrait Retouching", subtitle: "자연스러운 피부결과 얼굴 디테일을 살린 인물 보정", tools: ["Image Retouching"] },
   ],
@@ -105,10 +106,20 @@ const videoSection = {
   items: outzyItems,
 }
 
+function YogiThumbnail() {
+  return <div className="yogi-thumbnail" aria-label="YOGI 홈, 아사나 목록, 시퀀스 편집 화면 썸네일">
+    <div className="yogi-thumbnail-screens" aria-hidden="true">
+      <img src="/yogi/screens/cover-home.webp" alt="" />
+      <img src="/yogi/screens/cover-library.webp" alt="" />
+      <img src="/yogi/screens/cover-sequence.webp" alt="" />
+    </div>
+  </div>
+}
+
 function PracticalCard({ item }: { item: (typeof practicalSections)[number]["items"][number] }) {
-  return <Link href={item.href} className="ai-content-card practical-card">
+  return <Link href={item.href} className={`ai-content-card practical-card ${item.href === "/design/yogi" ? "yogi-card" : ""}`}>
     <div className="ai-content-card-media">
-      <img className="ai-content-card-visual" src={item.image} alt={item.title} />
+      {item.href === "/design/yogi" ? <YogiThumbnail /> : <img className="ai-content-card-visual" src={item.image} alt={item.title} />}
       <span className="ai-content-card-action">View work <span aria-hidden="true">↗</span></span>
     </div>
     <div className="ai-content-card-body">
