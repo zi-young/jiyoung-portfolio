@@ -154,47 +154,9 @@ export const typoLabItems: AIContentItem[] = [
     category: "AI Visual Art (Conceptual Photography)",
     tools: ["Midjourney"],
   },
-  {
-    id: "album-cover-reframed",
-    section: "typo",
-    image: "/album-poster.jpg",
-    title: "Album Cover: Reframed",
-    subtitle: "음악의 분위기를 타이포와 레이아웃으로 재해석",
-    story:
-      "앨범이 가진 감정의 온도를 새로운 타이포 시스템과 화면 구성으로 다시 설계했습니다. 타이틀의 리듬, 이미지의 여백, 인쇄물 같은 질감을 조절해 하나의 독립적인 커버 아트로 완성했습니다.",
-    tools: ["Photoshop", "Illustrator"],
-    process: ["음악 키워드 추출", "타이포 위계와 그리드 설계", "이미지 합성 및 질감 보정"],
-    promptExample:
-      "Experimental album cover, expressive editorial typography, cinematic atmosphere, restrained color palette, subtle print texture",
-  },
-  {
-    id: "fashion-type-poster",
-    section: "typo",
-    image: "/fashion.jpg",
-    title: "Fashion Type Poster",
-    subtitle: "패션 이미지와 타이포 위계를 결합한 포스터 스터디",
-    story:
-      "인물 이미지의 시선과 실루엣을 기준으로 타이포의 크기와 위치를 설계한 편집 디자인 실험입니다. 이미지 위에서도 정보가 선명하게 읽히도록 대비와 여백의 균형을 조절했습니다.",
-    tools: ["Photoshop", "Illustrator"],
-    process: ["이미지 분석", "타이포 그리드 구성", "컬러와 질감 보정"],
-    promptExample:
-      "Contemporary fashion editorial poster, bold typographic hierarchy, refined negative space, monochrome photography with a subtle accent color",
-  },
 ]
 
 export const aiPlaygroundItems: AIContentItem[] = [
-  {
-    id: "monkeysoft-ai-film",
-    section: "playground",
-    image: "/AI_contents/monkeysoft-poster.jpg",
-    video: "/AI_contents/monkeysoft.mp4",
-    title: "MonkeySoft AI Brand Film",
-    subtitle: "개발자의 일상을 유쾌하게 풀어낸 AI 브랜드 영상",
-    story:
-      "개발자의 업무 공간과 MonkeySoft의 아이덴티티를 바탕으로 제작한 짧은 브랜드 영상입니다. 실제 공간의 분위기와 브랜드 컬러를 유지하면서, AI 영상 생성으로 자연스러운 움직임과 리듬을 더했습니다.",
-    tools: ["Gemini", "Veo"],
-    process: ["브랜드와 장면 컨셉 설정", "기준 이미지 제작", "AI 영상 생성 및 편집"],
-  },
   {
     id: "1",
     section: "playground",
@@ -224,20 +186,6 @@ export const aiPlaygroundItems: AIContentItem[] = [
     promptExample:
       "A curious cat in a quiet room, subtle natural movement, gentle handheld camera, warm morning light, seamless short loop",
     externalUrl: "https://www.youtube.com/watch?v=SPC8Aysu4AE",
-  },
-  {
-    id: "3",
-    section: "playground",
-    image: "/AI_contents/youtube2.png",
-    video: "/AI_contents/youtube2.MP4",
-    title: "Scene & Voice Experiment",
-    subtitle: "장면 전환과 음성을 결합한 짧은 내러티브",
-    story:
-      "생성한 장면 사이의 연결감과 음성이 영상의 인상을 어떻게 바꾸는지 실험했습니다. 짧은 러닝타임 안에서도 시작과 반전이 느껴지도록 컷의 순서와 타이밍을 조정했습니다.",
-    tools: ["Veo", "Google AI", "Premiere Pro"],
-    process: ["미니 스토리보드 작성", "장면별 영상 생성", "음성 및 전환 타이밍 편집"],
-    promptExample:
-      "A whimsical cinematic sequence with a clear visual transition, expressive character reaction, synchronized ambient sound and dialogue",
   },
 ]
 

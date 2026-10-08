@@ -50,22 +50,6 @@ const projects = [
   },
   {
     id: 3,
-    title: "Album, Poster & Fashion Detail Page Design",
-    description:
-      "앨범 커버와 프로모션 포스터,\n의류 쇼핑몰 상세페이지 디자인 작업입니다.\n브랜드 감성과 목적에 맞춘 시각적 구성을 통해\n각 콘텐츠의 분위기를 극대화했습니다.",
-    category: "Graphic Design · Visual Branding",
-    client: "Personal Project",
-    date: "2020",
-    role: "Designer",
-    tools: "Adobe Photoshop, Adobe Illustrator",
-    image: ["/album-poster.jpg","/fashion.jpg"],
-    solution:
-      "앨범 디자인은 아티스트의 감성과 콘셉트를 반영한 일러스트 중심의 무드로,\n포스터는 프로모션 목적에 맞게 깔끔하고 직관적인 레이아웃으로 구성했습니다.\n의류 상세페이지는 컬러 톤과 배경 질감을 통일해 브랜드의 감각적인 이미지를 강화했습니다.",
-    result:
-      "감성적이면서도 상업적인 완성도를 갖춘 시리즈 디자인으로 완성되었으며,\n다양한 매체에 적용 가능한 비주얼 아이덴티티로 확장되었습니다.",
-  },
-  {
-    id: 4,
     title: "Instagram Content · 실전편 Quiz",
     description: "미리캔버스 템플릿을 기반으로 MonkeySoft의 실전편 콘텐츠를 픽셀 아트 스타일의 인스타그램 시리즈로 제작했습니다.",
     category: "SNS Content Design",
@@ -84,7 +68,7 @@ const projects = [
     result: "딱딱하게 느껴질 수 있는 실무 정보를 게임 화면처럼 친근하게 전달하고, 다음 장을 확인하고 싶게 만드는 SNS용 콘텐츠 시리즈로 완성했습니다.",
   },
   {
-    id: 5,
+    id: 4,
     title: "Instagram Content · AI 기초",
     description: "미리캔버스 템플릿을 활용해 AI의 개념과 활용 가능성을 쉽고 친근하게 설명하는 인스타그램 정보 콘텐츠를 제작했습니다.",
     category: "SNS Content Design",
@@ -104,7 +88,7 @@ const projects = [
     result: "AI를 처음 접하는 독자도 핵심 내용을 빠르게 이해할 수 있는 교육형 SNS 콘텐츠로 제작해 브랜드의 기술 전문성과 친근한 커뮤니케이션을 함께 전달했습니다.",
   },
   {
-    id: 6,
+    id: 5,
     title: "ThingsMiner Logo & CI Design",
     description: "Figma Make를 활용해 MonkeySoft의 CI 컬러를 기반으로 IoT 모니터링 솔루션 ThingsMiner의 로고와 활용 시안을 제작했습니다.",
     category: "Logo & Brand Identity",
